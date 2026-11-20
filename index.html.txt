@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reynier Sambrine | Key & Legacy Realty</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .bg-custom-black { background-color: #101114; }
+        .bg-custom-blue { background-color: #142B49; }
+        .text-custom-gold { color: #C6A15B; }
+        .bg-custom-gold { background-color: #C6A15B; }
+        .border-custom-gold { border-color: #C6A15B; }
+    </style>
+</head>
+<body class="bg-[#101114] text-white font-sans antialiased selection:bg-[#C6A15B] selection:text-[#101114]">
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav class="sticky top-0 z-50 bg-[#101114]/95 backdrop-blur border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <!-- Logotipo Personal RS -->
+                <div class="w-12 h-12 rounded-xl bg-[#142B49] flex items-center justify-center p-1 border border-[#C6A15B]/40 shadow-lg">
+                    <span class="font-bold text-lg text-[#C6A15B]">RS</span>
+                </div>
+                <div>
+                    <span class="block font-bold tracking-wider text-base sm:text-lg">REYNIER SAMBRINE</span>
+                    <span class="block text-xs text-[#C6A15B] font-semibold tracking-widest uppercase">Key & Legacy Realty</span>
+                </div>
+            </div>
+            <div class="hidden xl:flex items-center space-x-6 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-[#C6A15B] transition">About Me</a>
+                <a href="#buyers" class="hover:text-[#C6A15B] transition">Buyers</a>
+                <a href="#sellers" class="hover:text-[#C6A15B] transition">Sellers</a>
+                <a href="#properties" class="hover:text-[#C6A15B] transition">Properties</a>
+                <a href="#investments" class="hover:text-[#C6A15B] transition">Land & Inv.</a>
+                <a href="#areas" class="hover:text-[#C6A15B] transition">Areas</a>
+                <a href="#testimonials" class="hover:text-[#C6A15B] transition">Testimonials</a>
+                <a href="#contact" class="bg-[#C6A15B] hover:bg-[#b08d4a] text-[#101114] px-5 py-2.5 rounded-xl font-bold transition shadow-md">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. HOME / PORTADA -->
+    <header class="relative py-24 lg:py-36 bg-gradient-to-b from-[#101114] to-[#142B49]/40 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <span class="inline-block bg-[#142B49] text-[#C6A15B] border border-[#C6A15B]/30 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase shadow-inner">
+                    Miami REALTORS® & NABOR Member • Key & Legacy Realty
+                </span>
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight">
+                    Construyendo tu legado inmobiliario <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#C6A15B] to-amber-200">con distinción</span>
+                </h1>
+                <p class="text-slate-300 text-lg max-w-2xl mx-auto lg:mx-0">
+                    Asesoría profesional de alto nivel en el mercado de Florida. Compra, venta e inversión inteligente respaldada por excelencia. / Your legacy starts here.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
+                    <a href="https://wa.me/message/KHW7EZR2I6AQK1" target="_blank" class="bg-[#C6A15B] hover:bg-[#b08d4a] text-[#101114] px-8 py-4 rounded-xl font-bold transition text-center shadow-lg shadow-[#C6A15B]/10 flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Contactar por WhatsApp
+                    </a>
+                    <a href="#properties" class="bg-[#142B49] hover:bg-[#1a365d] text-white px-8 py-4 rounded-xl font-bold transition text-center border border-[#C6A15B]/30">
+                        Ver Propiedades / Listings
+                    </a>
+                </div>
+            </div>
+            <!-- Fotografía Profesional -->
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-72 h-80 sm:w-80 sm:h-96 rounded-3xl p-2 bg-gradient-to-tr from-[#C6A15B] to-[#142B49] shadow-2xl overflow-hidden">
+                    <img src="foto.jpg" alt="Reynier Sambrine" class="w-full h-full object-cover rounded-2xl border border-slate-800">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. ABOUT ME / SOBRE MÍ -->
+    <section id="about" class="py-20 bg-[#101114] border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="text-[#C6A15B] text-xs font-bold uppercase tracking-widest">Sobre Mí / About Me</span>
+                <h2 class="text-3xl sm:text-4xl font-bold">Compromiso, Integridad y Trayectoria</h2>
+                <p class="text-slate-300 leading-relaxed">
+                    Como agente licenciado en el estado de Florida, mi enfoque combina un profundo conocimiento del mercado con una atención personalizada. Asociado a las principales juntas como <strong class="text-white">Miami REALTORS®</strong> y NABOR, garantizo transacciones seguras y eficientes.
+                </p>
+                <div class="grid grid-cols-2 gap-4 pt-2">
+                    <div class="bg-[#142B49]/50 p-4 rounded-xl border border-[#C6A15B]/20">
+                        <span class="block text-2xl font-bold text-[#C6A15B]">Key & Legacy</span>
+                        <span class="text-xs text-slate-300">Respaldo Inmobiliario</span>
+                    </div>
+                    <div class="bg-[#142B49]/50 p-4 rounded-xl border border-[#C6A15B]/20">
+                        <span class="block text-2xl font-bold text-[#C6A15B]">Bilingüe</span>
+                        <span class="text-xs text-slate-300">Español / English</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-[#142B49] p-8 rounded-3xl border border-[#C6A15B]/30 shadow-2xl space-y-4">
+                <h3 class="text-xl font-bold text-white border-b border-[#C6A15B]/20 pb-3">Filosofía de Trabajo / Philosophy</h3>
+                <p class="text-slate-300 text-sm">
+                    Cada cliente es único. Ya sea que busques tu residencia principal, una propiedad vacacional o expandir tu portafolio de inversión, ofrezco discreción absoluta y soluciones estratégicas adaptadas a tus metas financieras.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3 & 4. BUYERS & SELLERS FORMULARIOS -->
+    <section class="py-20 bg-[#142B49]/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Compradores -->
+            <div id="buyers" class="bg-[#101114] p-8 rounded-3xl border border-slate-800 shadow-2xl">
+                <div class="mb-6">
+                    <span class="text-[#C6A15B] text-xs font-bold uppercase tracking-widest">Buy a Home</span>
+                    <h3 class="text-2xl font-bold mt-1">Portal para Compradores</h3>
+                </div>
+                <form action="https://formsubmit.co/Sambrinereynier@gmail.com" method="POST" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-medium text-slate-400 mb-1">Nombre Completo / Full Name</label>
+                        <input type="text" name="name" required class="w-full bg-[#101114] border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#C6A15B]">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-400 mb-1">Correo / Email</label>
+                            <input type="email" name="email" required class="w-full bg-[#101114] border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#C6A15B]">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-400 mb-1">Teléfono / Phone</label>
+                            <input type="tel" name="phone" required class="w-full bg-[#101114] border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#C6A15B]">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-400 mb-1">¿Qué tipo de propiedad buscas?</label>
+                        <textarea name="details" rows="3" class="w-full bg-[#101114] border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#C6A15B]"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-[#C6A15B] hover:bg-[#b08d4a] text-[#101114] font-bold py-3.5 rounded-xl transition shadow-lg">
+                        Enviar Requerimiento / Submit
+                    </button>
+                </form>
+            </div>
+
+            <!-- Vendedores -->
+            <div id="sellers" class="bg-[#101114] p-8 rounded-3xl border border-slate-800 shadow-2xl">
+                <div class="mb-6">
+                    <span class="text-[#C6A15B] text-xs font-bold uppercase tracking-widest">Sell Your Property</span>
+                    <h3 class="text-2xl font-bold mt-1">Portal para Vendedores</h3>
+                </div>
+                <form action="https://formsubmit.co/Sambrinereynier@gmail.com" method="POST" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-medium text-slate-400 mb-1">Nombre Completo / Full Name</label>
+                        <input type="text" name="name" required class="w-full bg-[#101114] border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#C6A15B]">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-400 mb-1">Correo / Email</label>
+                            <input type="email" name="email" required class="w-full bg-[#101114] border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#C6A15B]">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-400 mb-1">Dirección del Inmueble</label>
+                            <input type="text" name="address" required class="w-full bg-[#101114] border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#C6A15B]">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-400 mb-1">Detalles de la propiedad</label>
+                        <textarea name="details" rows="3" class="w-full bg-[#101114] border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#C6A15B]"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-[#C6A15B] hover:bg-[#b08d4a] text-[#101114] font-bold py-3.5 rounded-xl transition shadow-lg">
+                        Solicitar Valoración / Valuation
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5 & 6. FEATURED PROPERTIES & LAND / INVERSIONES -->
+    <section id="properties" class="py-20 bg-[#101114] border-t border-slate-800">
+        <div class="max
