@@ -6,7 +6,6 @@
   <title>Reynier Sambrine | Key & Legacy Realty</title>
   <meta name="description" content="Asesoría inmobiliaria en Florida. Compra, venta e inversión con Reynier Sambrine y Key & Legacy Realty.">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     html { scroll-behavior: smooth; }
     body { background: #101114; color: #fff; }
@@ -14,24 +13,26 @@
 </head>
 <body class="font-sans antialiased">
   <nav class="sticky top-0 z-50 border-b border-slate-800 bg-[#101114]/95 backdrop-blur">
-    <div class="mx-auto flex min-h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-      <a href="#inicio" class="flex items-center gap-3" aria-label="Inicio">
-        <img src="Logo dorado.png" alt="Key & Legacy Realty" class="h-12 w-12 shrink-0 rounded-xl border border-[#C6A15B]/40 bg-[#142B49] object-contain p-1">
-        <div>
-          <span class="block text-base font-bold tracking-wider sm:text-lg">REYNIER SAMBRINE</span>
-          <span class="block text-xs font-semibold uppercase tracking-widest text-[#C6A15B]">Key & Legacy Realty</span>
+    <div class="mx-auto flex min-h-20 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
+      <a href="#inicio" class="flex min-w-0 items-center gap-3" aria-label="Inicio">
+        <img src="Logo%20dorado.png" alt="Logo de Reynier Sambrine - Key & Legacy Realty" class="h-12 w-12 shrink-0 rounded-xl border border-[#C6A15B]/40 bg-[#142B49] object-contain p-1">
+        <div class="min-w-0">
+          <span class="block truncate text-sm font-bold tracking-wider sm:text-lg">REYNIER SAMBRINE</span>
+          <span class="block truncate text-[10px] font-semibold uppercase tracking-widest text-[#C6A15B] sm:text-xs">Key & Legacy Realty</span>
         </div>
       </a>
-      <div class="flex items-center gap-4 sm:gap-6">
-        <div class="hidden items-center gap-6 text-sm font-medium text-slate-300 xl:flex">
-          <a href="#about" data-i18n="navAbout" class="transition hover:text-[#C6A15B]">Sobre mí</a>
-          <a href="#buyers" data-i18n="navBuyers" class="transition hover:text-[#C6A15B]">Compradores</a>
-          <a href="#sellers" data-i18n="navSellers" class="transition hover:text-[#C6A15B]">Vendedores</a>
-          <a href="#properties" data-i18n="navProperties" class="transition hover:text-[#C6A15B]">Propiedades</a>
-          <a href="#contact" data-i18n="navContact" class="rounded-xl bg-[#C6A15B] px-5 py-2.5 font-bold text-[#101114] transition hover:bg-[#b08d4a]">Contacto</a>
-        </div>
+
+      <div class="hidden items-center gap-5 text-sm font-medium text-slate-300 2xl:flex">
+        <a href="#about" data-i18n="navAbout" class="whitespace-nowrap transition hover:text-[#C6A15B]">Sobre mí</a>
+        <a href="#buyers-sellers" data-i18n="navBuySell" class="whitespace-nowrap transition hover:text-[#C6A15B]">Comprar/Vender</a>
+        <a href="#properties" data-i18n="navProperties" class="whitespace-nowrap transition hover:text-[#C6A15B]">Propiedades/Terrenos</a>
+        <a href="#areas" data-i18n="navAreas" class="whitespace-nowrap transition hover:text-[#C6A15B]">Áreas de servicio</a>
+        <a href="#testimonials" data-i18n="navTestimonials" class="whitespace-nowrap transition hover:text-[#C6A15B]">Testimonios</a>
+      </div>
+
+      <div class="flex shrink-0 items-center gap-2">
         <label for="language-selector" class="sr-only" data-i18n="languageLabel">Seleccionar idioma</label>
-        <select id="language-selector" aria-label="Seleccionar idioma" class="rounded-lg border border-[#C6A15B]/50 bg-[#142B49] px-3 py-2 text-sm font-semibold text-white outline-none focus:border-[#C6A15B]">
+        <select id="language-selector" aria-label="Seleccionar idioma" class="rounded-lg border border-[#C6A15B]/50 bg-[#142B49] px-2 py-2 text-xs font-semibold text-white outline-none focus:border-[#C6A15B] sm:px-3 sm:text-sm">
           <option value="es">Español</option>
           <option value="en">English</option>
           <option value="it">Italiano</option>
@@ -65,12 +66,6 @@
         <span data-i18n="aboutEyebrow" class="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">Sobre mí</span>
         <h2 data-i18n="aboutTitle" class="text-3xl font-bold sm:text-4xl">Compromiso, integridad y trayectoria</h2>
         <p data-i18n="aboutDescription" class="leading-relaxed text-slate-300">Como agente licenciado en el estado de Florida, ofrezco atención personalizada y conocimiento profundo del mercado inmobiliario. Mi objetivo es representar los intereses de cada cliente con excelencia, transparencia y discreción.</p>
-        <div class="grid grid-cols-2 gap-4 pt-2">
-          <div class="rounded-xl border border-[#C6A15B]/20 bg-[#142B49]/50 p-4">
-            <span class="block text-2xl font-bold text-[#C6A15B]">Key & Legacy</span>
-            <span data-i18n="brokerageSupport" class="text-xs text-slate-300">Respaldo inmobiliario</span>
-          </div>
-        </div>
       </div>
       <div class="space-y-4 rounded-3xl border border-[#C6A15B]/30 bg-[#142B49] p-8 shadow-2xl">
         <h3 data-i18n="philosophyTitle" class="border-b border-[#C6A15B]/20 pb-3 text-xl font-bold">Filosofía de trabajo</h3>
@@ -79,9 +74,9 @@
     </div>
   </section>
 
-  <section class="bg-[#142B49]/30 py-20">
+  <section id="buyers-sellers" class="scroll-mt-24 bg-[#142B49]/30 py-20">
     <div class="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-      <div id="buyers" class="scroll-mt-24 rounded-3xl border border-slate-800 bg-[#101114] p-8 shadow-2xl">
+      <div id="buyers" class="rounded-3xl border border-slate-800 bg-[#101114] p-8 shadow-2xl">
         <span data-i18n="buyersEyebrow" class="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">Comprar una propiedad</span>
         <h3 data-i18n="buyersTitle" class="mb-6 mt-1 text-2xl font-bold">Portal para compradores</h3>
         <form action="https://formsubmit.co/Sambrinereynier@gmail.com" method="POST" class="space-y-4">
@@ -95,7 +90,7 @@
         </form>
       </div>
 
-      <div id="sellers" class="scroll-mt-24 rounded-3xl border border-slate-800 bg-[#101114] p-8 shadow-2xl">
+      <div id="sellers" class="rounded-3xl border border-slate-800 bg-[#101114] p-8 shadow-2xl">
         <span data-i18n="sellersEyebrow" class="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">Vender una propiedad</span>
         <h3 data-i18n="sellersTitle" class="mb-6 mt-1 text-2xl font-bold">Portal para vendedores</h3>
         <form action="https://formsubmit.co/Sambrinereynier@gmail.com" method="POST" class="space-y-4">
@@ -113,18 +108,29 @@
 
   <section id="properties" class="scroll-mt-24 border-t border-slate-800 bg-[#101114] py-20">
     <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-      <span data-i18n="propertiesEyebrow" class="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">Propiedades destacadas</span>
+      <span data-i18n="propertiesEyebrow" class="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">Propiedades y terrenos</span>
       <h2 data-i18n="propertiesTitle" class="mt-2 text-3xl font-bold sm:text-4xl">Encuentra tu próxima propiedad</h2>
-      <p data-i18n="propertiesDescription" class="mx-auto mt-4 max-w-2xl text-slate-300">Próximamente: selecciones exclusivas en las mejores zonas de Florida.</p>
+      <p data-i18n="propertiesDescription" class="mx-auto mt-4 max-w-2xl text-slate-300">Próximamente: propiedades y terrenos exclusivos en las mejores zonas de Florida.</p>
+    </div>
+  </section>
+
+  <section id="areas" class="scroll-mt-24 border-t border-slate-800 bg-[#142B49]/30 py-20">
+    <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <span data-i18n="areasEyebrow" class="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">Áreas de servicio</span>
+      <h2 data-i18n="areasTitle" class="mt-2 text-3xl font-bold sm:text-4xl">Miami y el sur de Florida</h2>
+    </div>
+  </section>
+
+  <section id="testimonials" class="scroll-mt-24 border-t border-slate-800 bg-[#101114] py-20">
+    <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <span data-i18n="testimonialsEyebrow" class="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">Testimonios</span>
+      <h2 data-i18n="testimonialsTitle" class="mt-2 text-3xl font-bold sm:text-4xl">Experiencias de nuestros clientes</h2>
     </div>
   </section>
 
   <footer id="contact" class="scroll-mt-24 border-t border-slate-800 bg-[#101114] py-10">
     <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-center sm:px-6 md:flex-row md:text-left lg:px-8">
-      <div>
-        <p class="font-bold">Reynier Sambrine</p>
-        <p data-i18n="footerBrokerage" class="text-sm text-slate-400">Key & Legacy Realty • Florida</p>
-      </div>
+      <div><p class="font-bold">Reynier Sambrine</p><p data-i18n="footerBrokerage" class="text-sm text-slate-400">Key & Legacy Realty • Florida</p></div>
       <a href="https://wa.me/message/KHW7EZR2I6AQK1" target="_blank" rel="noopener noreferrer" data-i18n="footerWhatsapp" class="rounded-xl bg-[#C6A15B] px-6 py-3 font-bold text-[#101114]">Contactar por WhatsApp</a>
     </div>
   </footer>
@@ -132,37 +138,28 @@
   <script>
     const translations = {
       es: {
-        pageTitle: 'Reynier Sambrine | Key & Legacy Realty',
-        pageDescription: 'Asesoría inmobiliaria en Florida. Compra, venta e inversión con Reynier Sambrine y Key & Legacy Realty.',
-        languageLabel: 'Seleccionar idioma', navAbout: 'Sobre mí', navBuyers: 'Compradores', navSellers: 'Vendedores', navProperties: 'Propiedades', navContact: 'Contacto',
-        heroBadge: 'Miami REALTORS® & NABOR Member • Key & Legacy Realty', heroTitle: 'Construyendo tu legado inmobiliario', heroEmphasis: 'con distinción',
-        heroDescription: 'Asesoría profesional de alto nivel en el mercado de Florida. Compra, venta e inversión inteligente respaldada por excelencia.', whatsappCta: 'Contactar por WhatsApp', propertiesCta: 'Ver propiedades',
-        aboutEyebrow: 'Sobre mí', aboutTitle: 'Compromiso, integridad y trayectoria', aboutDescription: 'Como agente licenciado en el estado de Florida, ofrezco atención personalizada y conocimiento profundo del mercado inmobiliario. Mi objetivo es representar los intereses de cada cliente con excelencia, transparencia y discreción.', brokerageSupport: 'Respaldo inmobiliario', philosophyTitle: 'Filosofía de trabajo', philosophyDescription: 'Cada cliente es único. Ya sea que busques tu residencia principal, una propiedad vacacional o expandir tu portafolio de inversión, recibirás un plan estratégico adaptado a tus objetivos.',
-        buyersEyebrow: 'Comprar una propiedad', buyersTitle: 'Portal para compradores', buyersSubject: 'Nuevo cliente comprador', namePlaceholder: 'Nombre completo', emailPlaceholder: 'Correo electrónico', phonePlaceholder: 'Teléfono', buyerDetailsPlaceholder: '¿Qué tipo de propiedad buscas?', buyersSubmit: 'Enviar solicitud',
-        sellersEyebrow: 'Vender una propiedad', sellersTitle: 'Portal para vendedores', sellersSubject: 'Solicitud de valoración', addressPlaceholder: 'Dirección de la propiedad', propertyDetailsPlaceholder: 'Detalles de la propiedad', sellersSubmit: 'Solicitar valoración',
-        propertiesEyebrow: 'Propiedades destacadas', propertiesTitle: 'Encuentra tu próxima propiedad', propertiesDescription: 'Próximamente: selecciones exclusivas en las mejores zonas de Florida.', footerBrokerage: 'Key & Legacy Realty • Florida', footerWhatsapp: 'Contactar por WhatsApp'
+        languageLabel:'Seleccionar idioma', navAbout:'Sobre mí', navBuySell:'Comprar/Vender', navProperties:'Propiedades/Terrenos', navAreas:'Áreas de servicio', navTestimonials:'Testimonios',
+        heroBadge:'Miami REALTORS® & NABOR Member • Key & Legacy Realty', heroTitle:'Construyendo tu legado inmobiliario', heroEmphasis:'con distinción', heroDescription:'Asesoría profesional de alto nivel en el mercado de Florida. Compra, venta e inversión inteligente respaldada por excelencia.', whatsappCta:'Contactar por WhatsApp', propertiesCta:'Ver propiedades',
+        aboutEyebrow:'Sobre mí', aboutTitle:'Compromiso, integridad y trayectoria', aboutDescription:'Como agente licenciado en el estado de Florida, ofrezco atención personalizada y conocimiento profundo del mercado inmobiliario. Mi objetivo es representar los intereses de cada cliente con excelencia, transparencia y discreción.', philosophyTitle:'Filosofía de trabajo', philosophyDescription:'Cada cliente es único. Ya sea que busques tu residencia principal, una propiedad vacacional o expandir tu portafolio de inversión, recibirás un plan estratégico adaptado a tus objetivos.',
+        buyersEyebrow:'Comprar una propiedad', buyersTitle:'Portal para compradores', buyersSubject:'Nuevo cliente comprador', namePlaceholder:'Nombre completo', emailPlaceholder:'Correo electrónico', phonePlaceholder:'Teléfono', buyerDetailsPlaceholder:'¿Qué tipo de propiedad buscas?', buyersSubmit:'Enviar solicitud',
+        sellersEyebrow:'Vender una propiedad', sellersTitle:'Portal para vendedores', sellersSubject:'Solicitud de valoración', addressPlaceholder:'Dirección de la propiedad', propertyDetailsPlaceholder:'Detalles de la propiedad', sellersSubmit:'Solicitar valoración',
+        propertiesEyebrow:'Propiedades y terrenos', propertiesTitle:'Encuentra tu próxima propiedad', propertiesDescription:'Próximamente: propiedades y terrenos exclusivos en las mejores zonas de Florida.', areasEyebrow:'Áreas de servicio', areasTitle:'Miami y el sur de Florida', testimonialsEyebrow:'Testimonios', testimonialsTitle:'Experiencias de nuestros clientes', footerBrokerage:'Key & Legacy Realty • Florida', footerWhatsapp:'Contactar por WhatsApp'
       },
       en: {
-        pageTitle: 'Reynier Sambrine | Key & Legacy Realty',
-        pageDescription: 'Real estate guidance in Florida. Buy, sell, and invest with Reynier Sambrine and Key & Legacy Realty.',
-        languageLabel: 'Select language', navAbout: 'About me', navBuyers: 'Buyers', navSellers: 'Sellers', navProperties: 'Properties', navContact: 'Contact',
-        heroBadge: 'Miami REALTORS® & NABOR Member • Key & Legacy Realty', heroTitle: 'Building your real estate legacy', heroEmphasis: 'with distinction',
-        heroDescription: 'Premier real estate guidance in the Florida market. Buy, sell, and invest with confidence and excellence.', whatsappCta: 'Contact via WhatsApp', propertiesCta: 'View properties',
-        aboutEyebrow: 'About me', aboutTitle: 'Commitment, integrity, and experience', aboutDescription: 'As a licensed real estate agent in Florida, I provide personalized service and in-depth knowledge of the local market. My goal is to represent every client’s interests with excellence, transparency, and discretion.', brokerageSupport: 'Real estate representation', philosophyTitle: 'Our philosophy', philosophyDescription: 'Every client is unique. Whether you are looking for a primary residence, a vacation home, or ways to grow your investment portfolio, you will receive a strategic plan tailored to your goals.',
-        buyersEyebrow: 'Buy a property', buyersTitle: 'Buyer inquiry', buyersSubject: 'New buyer inquiry', namePlaceholder: 'Full name', emailPlaceholder: 'Email address', phonePlaceholder: 'Phone number', buyerDetailsPlaceholder: 'What kind of property are you looking for?', buyersSubmit: 'Send inquiry',
-        sellersEyebrow: 'Sell a property', sellersTitle: 'Seller inquiry', sellersSubject: 'Property valuation request', addressPlaceholder: 'Property address', propertyDetailsPlaceholder: 'Property details', sellersSubmit: 'Request a valuation',
-        propertiesEyebrow: 'Featured properties', propertiesTitle: 'Find your next property', propertiesDescription: 'Coming soon: exclusive listings in Florida’s finest areas.', footerBrokerage: 'Key & Legacy Realty • Florida', footerWhatsapp: 'Contact via WhatsApp'
+        languageLabel:'Select language', navAbout:'About me', navBuySell:'Buy/Sell', navProperties:'Properties/Land', navAreas:'Service areas', navTestimonials:'Testimonials',
+        heroBadge:'Miami REALTORS® & NABOR Member • Key & Legacy Realty', heroTitle:'Building your real estate legacy', heroEmphasis:'with distinction', heroDescription:'Premier real estate guidance in the Florida market. Buy, sell, and invest with confidence and excellence.', whatsappCta:'Contact via WhatsApp', propertiesCta:'View properties',
+        aboutEyebrow:'About me', aboutTitle:'Commitment, integrity, and experience', aboutDescription:'As a licensed real estate agent in Florida, I provide personalized service and in-depth knowledge of the local market. My goal is to represent every client’s interests with excellence, transparency, and discretion.', philosophyTitle:'Our philosophy', philosophyDescription:'Every client is unique. Whether you are looking for a primary residence, a vacation home, or ways to grow your investment portfolio, you will receive a strategic plan tailored to your goals.',
+        buyersEyebrow:'Buy a property', buyersTitle:'Buyer inquiry', buyersSubject:'New buyer inquiry', namePlaceholder:'Full name', emailPlaceholder:'Email address', phonePlaceholder:'Phone number', buyerDetailsPlaceholder:'What kind of property are you looking for?', buyersSubmit:'Send inquiry',
+        sellersEyebrow:'Sell a property', sellersTitle:'Seller inquiry', sellersSubject:'Property valuation request', addressPlaceholder:'Property address', propertyDetailsPlaceholder:'Property details', sellersSubmit:'Request a valuation',
+        propertiesEyebrow:'Properties and land', propertiesTitle:'Find your next property', propertiesDescription:'Coming soon: exclusive properties and land in Florida’s finest areas.', areasEyebrow:'Service areas', areasTitle:'Miami and South Florida', testimonialsEyebrow:'Testimonials', testimonialsTitle:'Our client experiences', footerBrokerage:'Key & Legacy Realty • Florida', footerWhatsapp:'Contact via WhatsApp'
       },
       it: {
-        pageTitle: 'Reynier Sambrine | Key & Legacy Realty',
-        pageDescription: 'Consulenza immobiliare in Florida. Compra, vendi e investi con Reynier Sambrine e Key & Legacy Realty.',
-        languageLabel: 'Seleziona la lingua', navAbout: 'Chi sono', navBuyers: 'Acquirenti', navSellers: 'Venditori', navProperties: 'Immobili', navContact: 'Contatti',
-        heroBadge: 'Miami REALTORS® & NABOR Member • Key & Legacy Realty', heroTitle: 'Costruisci il tuo futuro immobiliare', heroEmphasis: 'con prestigio',
-        heroDescription: 'Consulenza immobiliare di alto livello in Florida. Compra, vendi e investi con fiducia e professionalità.', whatsappCta: 'Contattami su WhatsApp', propertiesCta: 'Vedi gli immobili',
-        aboutEyebrow: 'Chi sono', aboutTitle: 'Impegno, integrità ed esperienza', aboutDescription: 'Come agente immobiliare abilitato in Florida, offro un servizio personalizzato e una conoscenza approfondita del mercato locale. Il mio obiettivo è tutelare gli interessi di ogni cliente con professionalità, trasparenza e discrezione.', brokerageSupport: 'Supporto immobiliare', philosophyTitle: 'La mia filosofia', philosophyDescription: 'Ogni cliente è unico. Che tu stia cercando la tua residenza principale, una casa per le vacanze o opportunità per ampliare il tuo portafoglio d’investimento, riceverai un piano strategico su misura per i tuoi obiettivi.',
-        buyersEyebrow: 'Acquista un immobile', buyersTitle: 'Richiesta acquirenti', buyersSubject: 'Nuova richiesta acquirente', namePlaceholder: 'Nome completo', emailPlaceholder: 'Indirizzo email', phonePlaceholder: 'Numero di telefono', buyerDetailsPlaceholder: 'Che tipo di immobile stai cercando?', buyersSubmit: 'Invia richiesta',
-        sellersEyebrow: 'Vendi un immobile', sellersTitle: 'Richiesta venditori', sellersSubject: 'Richiesta di valutazione immobiliare', addressPlaceholder: 'Indirizzo dell’immobile', propertyDetailsPlaceholder: 'Dettagli dell’immobile', sellersSubmit: 'Richiedi una valutazione',
-        propertiesEyebrow: 'Immobili in evidenza', propertiesTitle: 'Trova il tuo prossimo immobile', propertiesDescription: 'Prossimamente: immobili esclusivi nelle migliori zone della Florida.', footerBrokerage: 'Key & Legacy Realty • Florida', footerWhatsapp: 'Contattami su WhatsApp'
+        languageLabel:'Seleziona la lingua', navAbout:'Chi sono', navBuySell:'Compra/Vendi', navProperties:'Immobili/Terreni', navAreas:'Zone servite', navTestimonials:'Testimonianze',
+        heroBadge:'Miami REALTORS® & NABOR Member • Key & Legacy Realty', heroTitle:'Costruisci il tuo futuro immobiliare', heroEmphasis:'con prestigio', heroDescription:'Consulenza immobiliare di alto livello in Florida. Compra, vendi e investi con fiducia e professionalità.', whatsappCta:'Contattami su WhatsApp', propertiesCta:'Vedi gli immobili',
+        aboutEyebrow:'Chi sono', aboutTitle:'Impegno, integrità ed esperienza', aboutDescription:'Come agente immobiliare abilitato in Florida, offro un servizio personalizzato e una conoscenza approfondita del mercato locale. Il mio obiettivo è tutelare gli interessi di ogni cliente con professionalità, trasparenza e discrezione.', philosophyTitle:'La mia filosofia', philosophyDescription:'Ogni cliente è unico. Che tu stia cercando la tua residenza principale, una casa per le vacanze o opportunità per ampliare il tuo portafoglio d’investimento, riceverai un piano strategico su misura per i tuoi obiettivi.',
+        buyersEyebrow:'Acquista un immobile', buyersTitle:'Richiesta acquirenti', buyersSubject:'Nuova richiesta acquirente', namePlaceholder:'Nome completo', emailPlaceholder:'Indirizzo email', phonePlaceholder:'Numero di telefono', buyerDetailsPlaceholder:'Che tipo di immobile stai cercando?', buyersSubmit:'Invia richiesta',
+        sellersEyebrow:'Vendi un immobile', sellersTitle:'Richiesta venditori', sellersSubject:'Richiesta di valutazione immobiliare', addressPlaceholder:'Indirizzo dell’immobile', propertyDetailsPlaceholder:'Dettagli dell’immobile', sellersSubmit:'Richiedi una valutazione',
+        propertiesEyebrow:'Immobili e terreni', propertiesTitle:'Trova il tuo prossimo immobile', propertiesDescription:'Prossimamente: immobili e terreni esclusivi nelle migliori zone della Florida.', areasEyebrow:'Zone servite', areasTitle:'Miami e sud della Florida', testimonialsEyebrow:'Testimonianze', testimonialsTitle:'Esperienze dei nostri clienti', footerBrokerage:'Key & Legacy Realty • Florida', footerWhatsapp:'Contattami su WhatsApp'
       }
     };
 
@@ -171,27 +168,20 @@
       const selectedLanguage = translations[language] ? language : 'es';
       const dictionary = translations[selectedLanguage];
       document.documentElement.lang = selectedLanguage;
-      document.title = dictionary.pageTitle;
-      document.querySelector('meta[name="description"]').content = dictionary.pageDescription;
       document.querySelectorAll('[data-i18n]').forEach((element) => {
-        const translatedText = dictionary[element.dataset.i18n];
-        if (translatedText) element.textContent = translatedText;
+        if (dictionary[element.dataset.i18n]) element.textContent = dictionary[element.dataset.i18n];
       });
       document.querySelectorAll('[data-i18n-placeholder]').forEach((element) => {
-        const translatedText = dictionary[element.dataset.i18nPlaceholder];
-        if (translatedText) element.placeholder = translatedText;
+        if (dictionary[element.dataset.i18nPlaceholder]) element.placeholder = dictionary[element.dataset.i18nPlaceholder];
       });
       document.querySelectorAll('[data-i18n-value]').forEach((element) => {
-        const translatedText = dictionary[element.dataset.i18nValue];
-        if (translatedText) element.value = translatedText;
+        if (dictionary[element.dataset.i18nValue]) element.value = dictionary[element.dataset.i18nValue];
       });
       languageSelector.value = selectedLanguage;
       localStorage.setItem('preferred-language', selectedLanguage);
     }
-
     languageSelector.addEventListener('change', (event) => setLanguage(event.target.value));
-    const savedLanguage = localStorage.getItem('preferred-language');
-    setLanguage(savedLanguage || 'es');
+    setLanguage(localStorage.getItem('preferred-language') || 'es');
   </script>
 </body>
 </html>
