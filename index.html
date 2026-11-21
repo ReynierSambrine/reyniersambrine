@@ -6,7 +6,7 @@
   <title>Reynier Sambrine | Key & Legacy Realty</title>
   <meta name="description" content="Asesoría inmobiliaria en Florida. Compra, venta e inversión con Reynier Sambrine y Key & Legacy Realty.">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax?v=6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     html { scroll-behavior: smooth; }
     body { background: #101114; color: #fff; }
@@ -14,20 +14,28 @@
 </head>
 <body class="font-sans antialiased">
   <nav class="sticky top-0 z-50 border-b border-slate-800 bg-[#101114]/95 backdrop-blur">
-    <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto flex min-h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
       <a href="#inicio" class="flex items-center gap-3" aria-label="Inicio">
-        <div class="flex h-12 w-12 items-center justify-center rounded-xl border border-[#C6A15B]/40 bg-[#142B49] text-lg font-bold text-[#C6A15B]">RS</div>
+        <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-[#C6A15B]/40 bg-[#142B49] text-lg font-bold text-[#C6A15B]">RS</div>
         <div>
           <span class="block text-base font-bold tracking-wider sm:text-lg">REYNIER SAMBRINE</span>
           <span class="block text-xs font-semibold uppercase tracking-widest text-[#C6A15B]">Key & Legacy Realty</span>
         </div>
       </a>
-      <div class="hidden items-center gap-6 text-sm font-medium text-slate-300 xl:flex">
-        <a href="#about" class="transition hover:text-[#C6A15B]">About Me</a>
-        <a href="#buyers" class="transition hover:text-[#C6A15B]">Buyers</a>
-        <a href="#sellers" class="transition hover:text-[#C6A15B]">Sellers</a>
-        <a href="#properties" class="transition hover:text-[#C6A15B]">Properties</a>
-        <a href="#contact" class="rounded-xl bg-[#C6A15B] px-5 py-2.5 font-bold text-[#101114] transition hover:bg-[#b08d4a]">Contact</a>
+      <div class="flex items-center gap-4 sm:gap-6">
+        <div class="hidden items-center gap-6 text-sm font-medium text-slate-300 xl:flex">
+          <a href="#about" data-i18n="navAbout" class="transition hover:text-[#C6A15B]">Sobre mí</a>
+          <a href="#buyers" data-i18n="navBuyers" class="transition hover:text-[#C6A15B]">Compradores</a>
+          <a href="#sellers" data-i18n="navSellers" class="transition hover:text-[#C6A15B]">Vendedores</a>
+          <a href="#properties" data-i18n="navProperties" class="transition hover:text-[#C6A15B]">Propiedades</a>
+          <a href="#contact" data-i18n="navContact" class="rounded-xl bg-[#C6A15B] px-5 py-2.5 font-bold text-[#101114] transition hover:bg-[#b08d4a]">Contacto</a>
+        </div>
+        <label for="language-selector" class="sr-only" data-i18n="languageLabel">Seleccionar idioma</label>
+        <select id="language-selector" aria-label="Seleccionar idioma" class="rounded-lg border border-[#C6A15B]/50 bg-[#142B49] px-3 py-2 text-sm font-semibold text-white outline-none focus:border-[#C6A15B]">
+          <option value="es">Español</option>
+          <option value="en">English</option>
+          <option value="it">Italiano</option>
+        </select>
       </div>
     </div>
   </nav>
@@ -35,22 +43,12 @@
   <header id="inicio" class="border-b border-slate-800 bg-gradient-to-b from-[#101114] to-[#142B49]/40 py-20 lg:py-28">
     <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
       <div class="space-y-6 text-center lg:col-span-7 lg:text-left">
-        <span class="inline-block rounded-full border border-[#C6A15B]/30 bg-[#142B49] px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#C6A15B]">
-          Miami REALTORS® & NABOR Member • Key & Legacy Realty
-        </span>
-        <h1 class="text-4xl font-extrabold tracking-tight sm:text-6xl">
-          Construyendo tu legado inmobiliario <span class="bg-gradient-to-r from-[#C6A15B] to-amber-200 bg-clip-text text-transparent">con distinción</span>
-        </h1>
-        <p class="mx-auto max-w-2xl text-lg text-slate-300 lg:mx-0">
-          Asesoría profesional de alto nivel en el mercado de Florida. Compra, venta e inversión inteligente respaldada por excelencia.
-        </p>
+        <span data-i18n="heroBadge" class="inline-block rounded-full border border-[#C6A15B]/30 bg-[#142B49] px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#C6A15B]">Miami REALTORS® & NABOR Member • Key & Legacy Realty</span>
+        <h1 class="text-4xl font-extrabold tracking-tight sm:text-6xl"><span data-i18n="heroTitle">Construyendo tu legado inmobiliario</span> <span data-i18n="heroEmphasis" class="bg-gradient-to-r from-[#C6A15B] to-amber-200 bg-clip-text text-transparent">con distinción</span></h1>
+        <p data-i18n="heroDescription" class="mx-auto max-w-2xl text-lg text-slate-300 lg:mx-0">Asesoría profesional de alto nivel en el mercado de Florida. Compra, venta e inversión inteligente respaldada por excelencia.</p>
         <div class="flex flex-col justify-center gap-4 pt-4 sm:flex-row lg:justify-start">
-          <a href="https://wa.me/message/KHW7EZR2I6AQK1" target="_blank" rel="noopener noreferrer" class="rounded-xl bg-[#C6A15B] px-8 py-4 text-center font-bold text-[#101114] transition hover:bg-[#b08d4a]">
-            Contactar por WhatsApp
-          </a>
-          <a href="#properties" class="rounded-xl border border-[#C6A15B]/30 bg-[#142B49] px-8 py-4 text-center font-bold text-white transition hover:bg-[#1a365d]">
-            Ver Propiedades
-          </a>
+          <a href="https://wa.me/message/KHW7EZR2I6AQK1" target="_blank" rel="noopener noreferrer" data-i18n="whatsappCta" class="rounded-xl bg-[#C6A15B] px-8 py-4 text-center font-bold text-[#101114] transition hover:bg-[#b08d4a]">Contactar por WhatsApp</a>
+          <a href="#properties" data-i18n="propertiesCta" class="rounded-xl border border-[#C6A15B]/30 bg-[#142B49] px-8 py-4 text-center font-bold text-white transition hover:bg-[#1a365d]">Ver propiedades</a>
         </div>
       </div>
       <div class="flex justify-center lg:col-span-5">
@@ -64,23 +62,19 @@
   <section id="about" class="border-b border-slate-800 bg-[#101114] py-20">
     <div class="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
       <div class="space-y-6">
-        <span class="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">Sobre mí / About Me</span>
-        <h2 class="text-3xl font-bold sm:text-4xl">Compromiso, integridad y trayectoria</h2>
-        <p class="leading-relaxed text-slate-300">Como agente licenciado en el estado de Florida, ofrezco atención personalizada y conocimiento profundo del mercado inmobiliario. Mi objetivo es representar los intereses de cada cliente con excelencia, transparencia y discreción.</p>
+        <span data-i18n="aboutEyebrow" class="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">Sobre mí</span>
+        <h2 data-i18n="aboutTitle" class="text-3xl font-bold sm:text-4xl">Compromiso, integridad y trayectoria</h2>
+        <p data-i18n="aboutDescription" class="leading-relaxed text-slate-300">Como agente licenciado en el estado de Florida, ofrezco atención personalizada y conocimiento profundo del mercado inmobiliario. Mi objetivo es representar los intereses de cada cliente con excelencia, transparencia y discreción.</p>
         <div class="grid grid-cols-2 gap-4 pt-2">
           <div class="rounded-xl border border-[#C6A15B]/20 bg-[#142B49]/50 p-4">
             <span class="block text-2xl font-bold text-[#C6A15B]">Key & Legacy</span>
-            <span class="text-xs text-slate-300">Respaldo inmobiliario</span>
-          </div>
-          <div class="rounded-xl border border-[#C6A15B]/20 bg-[#142B49]/50 p-4">
-            <span class="block text-2xl font-bold text-[#C6A15B]">Bilingüe</span>
-            <span class="text-xs text-slate-300">Español / English</span>
+            <span data-i18n="brokerageSupport" class="text-xs text-slate-300">Respaldo inmobiliario</span>
           </div>
         </div>
       </div>
       <div class="space-y-4 rounded-3xl border border-[#C6A15B]/30 bg-[#142B49] p-8 shadow-2xl">
-        <h3 class="border-b border-[#C6A15B]/20 pb-3 text-xl font-bold">Filosofía de trabajo</h3>
-        <p class="text-sm text-slate-300">Cada cliente es único. Ya sea que busques tu residencia principal, una propiedad vacacional o expandir tu portafolio de inversión, recibirás un plan estratégico adaptado a tus objetivos.</p>
+        <h3 data-i18n="philosophyTitle" class="border-b border-[#C6A15B]/20 pb-3 text-xl font-bold">Filosofía de trabajo</h3>
+        <p data-i18n="philosophyDescription" class="text-sm text-slate-300">Cada cliente es único. Ya sea que busques tu residencia principal, una propiedad vacacional o expandir tu portafolio de inversión, recibirás un plan estratégico adaptado a tus objetivos.</p>
       </div>
     </div>
   </section>
@@ -88,30 +82,30 @@
   <section class="bg-[#142B49]/30 py-20">
     <div class="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
       <div id="buyers" class="scroll-mt-24 rounded-3xl border border-slate-800 bg-[#101114] p-8 shadow-2xl">
-        <span class="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">Buy a Home</span>
-        <h3 class="mb-6 mt-1 text-2xl font-bold">Portal para Compradores</h3>
+        <span data-i18n="buyersEyebrow" class="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">Comprar una propiedad</span>
+        <h3 data-i18n="buyersTitle" class="mb-6 mt-1 text-2xl font-bold">Portal para compradores</h3>
         <form action="https://formsubmit.co/Sambrinereynier@gmail.com" method="POST" class="space-y-4">
-          <input type="hidden" name="_subject" value="Nuevo cliente comprador">
+          <input type="hidden" name="_subject" data-i18n-value="buyersSubject" value="Nuevo cliente comprador">
           <input type="hidden" name="_captcha" value="false">
-          <input type="text" name="name" required placeholder="Nombre completo" class="w-full rounded-xl border border-slate-800 bg-[#101114] px-4 py-3 text-white outline-none focus:border-[#C6A15B]">
-          <input type="email" name="email" required placeholder="Correo electrónico" class="w-full rounded-xl border border-slate-800 bg-[#101114] px-4 py-3 text-white outline-none focus:border-[#C6A15B]">
-          <input type="tel" name="phone" required placeholder="Teléfono" class="w-full rounded-xl border border-slate-800 bg-[#101114] px-4 py-3 text-white outline-none focus:border-[#C6A15B]">
-          <textarea name="details" rows="3" placeholder="¿Qué tipo de propiedad buscas?" class="w-full rounded-xl border border-slate-800 bg-[#101114] px-4 py-3 text-white outline-none focus:border-[#C6A15B]"></textarea>
-          <button type="submit" class="w-full rounded-xl bg-[#C6A15B] py-3.5 font-bold text-[#101114] transition hover:bg-[#b08d4a]">Enviar requerimiento</button>
+          <input type="text" name="name" required data-i18n-placeholder="namePlaceholder" placeholder="Nombre completo" class="w-full rounded-xl border border-slate-800 bg-[#101114] px-4 py-3 text-white outline-none focus:border-[#C6A15B]">
+          <input type="email" name="email" required data-i18n-placeholder="emailPlaceholder" placeholder="Correo electrónico" class="w-full rounded-xl border border-slate-800 bg-[#101114] px-4 py-3 text-white outline-none focus:border-[#C6A15B]">
+          <input type="tel" name="phone" required data-i18n-placeholder="phonePlaceholder" placeholder="Teléfono" class="w-full rounded-xl border border-slate-800 bg-[#101114] px-4 py-3 text-white outline-none focus:border-[#C6A15B]">
+          <textarea name="details" rows="3" data-i18n-placeholder="buyerDetailsPlaceholder" placeholder="¿Qué tipo de propiedad buscas?" class="w-full rounded-xl border border-slate-800 bg-[#101114] px-4 py-3 text-white outline-none focus:border-[#C6A15B]"></textarea>
+          <button type="submit" data-i18n="buyersSubmit" class="w-full rounded-xl bg-[#C6A15B] py-3.5 font-bold text-[#101114] transition hover:bg-[#b08d4a]">Enviar solicitud</button>
         </form>
       </div>
 
       <div id="sellers" class="scroll-mt-24 rounded-3xl border border-slate-800 bg-[#101114] p-8 shadow-2xl">
-        <span class="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">Sell Your Property</span>
-        <h3 class="mb-6 mt-1 text-2xl font-bold">Portal para Vendedores</h3>
+        <span data-i18n="sellersEyebrow" class="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">Vender una propiedad</span>
+        <h3 data-i18n="sellersTitle" class="mb-6 mt-1 text-2xl font-bold">Portal para vendedores</h3>
         <form action="https://formsubmit.co/Sambrinereynier@gmail.com" method="POST" class="space-y-4">
-          <input type="hidden" name="_subject" value="Solicitud de valoración">
+          <input type="hidden" name="_subject" data-i18n-value="sellersSubject" value="Solicitud de valoración">
           <input type="hidden" name="_captcha" value="false">
-          <input type="text" name="name" required placeholder="Nombre completo" class="w-full rounded-xl border border-slate-800 bg-[#101114] px-4 py-3 text-white outline-none focus:border-[#C6A15B]">
-          <input type="email" name="email" required placeholder="Correo electrónico" class="w-full rounded-xl border border-slate-800 bg-[#101114] px-4 py-3 text-white outline-none focus:border-[#C6A15B]">
-          <input type="text" name="address" required placeholder="Dirección del inmueble" class="w-full rounded-xl border border-slate-800 bg-[#101114] px-4 py-3 text-white outline-none focus:border-[#C6A15B]">
-          <textarea name="details" rows="3" placeholder="Detalles de la propiedad" class="w-full rounded-xl border border-slate-800 bg-[#101114] px-4 py-3 text-white outline-none focus:border-[#C6A15B]"></textarea>
-          <button type="submit" class="w-full rounded-xl bg-[#C6A15B] py-3.5 font-bold text-[#101114] transition hover:bg-[#b08d4a]">Solicitar valoración</button>
+          <input type="text" name="name" required data-i18n-placeholder="namePlaceholder" placeholder="Nombre completo" class="w-full rounded-xl border border-slate-800 bg-[#101114] px-4 py-3 text-white outline-none focus:border-[#C6A15B]">
+          <input type="email" name="email" required data-i18n-placeholder="emailPlaceholder" placeholder="Correo electrónico" class="w-full rounded-xl border border-slate-800 bg-[#101114] px-4 py-3 text-white outline-none focus:border-[#C6A15B]">
+          <input type="text" name="address" required data-i18n-placeholder="addressPlaceholder" placeholder="Dirección de la propiedad" class="w-full rounded-xl border border-slate-800 bg-[#101114] px-4 py-3 text-white outline-none focus:border-[#C6A15B]">
+          <textarea name="details" rows="3" data-i18n-placeholder="propertyDetailsPlaceholder" placeholder="Detalles de la propiedad" class="w-full rounded-xl border border-slate-800 bg-[#101114] px-4 py-3 text-white outline-none focus:border-[#C6A15B]"></textarea>
+          <button type="submit" data-i18n="sellersSubmit" class="w-full rounded-xl bg-[#C6A15B] py-3.5 font-bold text-[#101114] transition hover:bg-[#b08d4a]">Solicitar valoración</button>
         </form>
       </div>
     </div>
@@ -119,9 +113,9 @@
 
   <section id="properties" class="scroll-mt-24 border-t border-slate-800 bg-[#101114] py-20">
     <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-      <span class="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">Featured Listings</span>
-      <h2 class="mt-2 text-3xl font-bold sm:text-4xl">Propiedades destacadas</h2>
-      <p class="mx-auto mt-4 max-w-2xl text-slate-300">Próximamente: selecciones exclusivas en las mejores zonas de Florida.</p>
+      <span data-i18n="propertiesEyebrow" class="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">Propiedades destacadas</span>
+      <h2 data-i18n="propertiesTitle" class="mt-2 text-3xl font-bold sm:text-4xl">Encuentra tu próxima propiedad</h2>
+      <p data-i18n="propertiesDescription" class="mx-auto mt-4 max-w-2xl text-slate-300">Próximamente: selecciones exclusivas en las mejores zonas de Florida.</p>
     </div>
   </section>
 
@@ -129,10 +123,75 @@
     <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-center sm:px-6 md:flex-row md:text-left lg:px-8">
       <div>
         <p class="font-bold">Reynier Sambrine</p>
-        <p class="text-sm text-slate-400">Key & Legacy Realty • Florida</p>
+        <p data-i18n="footerBrokerage" class="text-sm text-slate-400">Key & Legacy Realty • Florida</p>
       </div>
-      <a href="https://wa.me/message/KHW7EZR2I6AQK1" target="_blank" rel="noopener noreferrer" class="rounded-xl bg-[#C6A15B] px-6 py-3 font-bold text-[#101114]">WhatsApp</a>
+      <a href="https://wa.me/message/KHW7EZR2I6AQK1" target="_blank" rel="noopener noreferrer" data-i18n="footerWhatsapp" class="rounded-xl bg-[#C6A15B] px-6 py-3 font-bold text-[#101114]">Contactar por WhatsApp</a>
     </div>
   </footer>
+
+  <script>
+    const translations = {
+      es: {
+        pageTitle: 'Reynier Sambrine | Key & Legacy Realty',
+        pageDescription: 'Asesoría inmobiliaria en Florida. Compra, venta e inversión con Reynier Sambrine y Key & Legacy Realty.',
+        languageLabel: 'Seleccionar idioma', navAbout: 'Sobre mí', navBuyers: 'Compradores', navSellers: 'Vendedores', navProperties: 'Propiedades', navContact: 'Contacto',
+        heroBadge: 'Miami REALTORS® & NABOR Member • Key & Legacy Realty', heroTitle: 'Construyendo tu legado inmobiliario', heroEmphasis: 'con distinción',
+        heroDescription: 'Asesoría profesional de alto nivel en el mercado de Florida. Compra, venta e inversión inteligente respaldada por excelencia.', whatsappCta: 'Contactar por WhatsApp', propertiesCta: 'Ver propiedades',
+        aboutEyebrow: 'Sobre mí', aboutTitle: 'Compromiso, integridad y trayectoria', aboutDescription: 'Como agente licenciado en el estado de Florida, ofrezco atención personalizada y conocimiento profundo del mercado inmobiliario. Mi objetivo es representar los intereses de cada cliente con excelencia, transparencia y discreción.', brokerageSupport: 'Respaldo inmobiliario', philosophyTitle: 'Filosofía de trabajo', philosophyDescription: 'Cada cliente es único. Ya sea que busques tu residencia principal, una propiedad vacacional o expandir tu portafolio de inversión, recibirás un plan estratégico adaptado a tus objetivos.',
+        buyersEyebrow: 'Comprar una propiedad', buyersTitle: 'Portal para compradores', buyersSubject: 'Nuevo cliente comprador', namePlaceholder: 'Nombre completo', emailPlaceholder: 'Correo electrónico', phonePlaceholder: 'Teléfono', buyerDetailsPlaceholder: '¿Qué tipo de propiedad buscas?', buyersSubmit: 'Enviar solicitud',
+        sellersEyebrow: 'Vender una propiedad', sellersTitle: 'Portal para vendedores', sellersSubject: 'Solicitud de valoración', addressPlaceholder: 'Dirección de la propiedad', propertyDetailsPlaceholder: 'Detalles de la propiedad', sellersSubmit: 'Solicitar valoración',
+        propertiesEyebrow: 'Propiedades destacadas', propertiesTitle: 'Encuentra tu próxima propiedad', propertiesDescription: 'Próximamente: selecciones exclusivas en las mejores zonas de Florida.', footerBrokerage: 'Key & Legacy Realty • Florida', footerWhatsapp: 'Contactar por WhatsApp'
+      },
+      en: {
+        pageTitle: 'Reynier Sambrine | Key & Legacy Realty',
+        pageDescription: 'Real estate guidance in Florida. Buy, sell, and invest with Reynier Sambrine and Key & Legacy Realty.',
+        languageLabel: 'Select language', navAbout: 'About me', navBuyers: 'Buyers', navSellers: 'Sellers', navProperties: 'Properties', navContact: 'Contact',
+        heroBadge: 'Miami REALTORS® & NABOR Member • Key & Legacy Realty', heroTitle: 'Building your real estate legacy', heroEmphasis: 'with distinction',
+        heroDescription: 'Premier real estate guidance in the Florida market. Buy, sell, and invest with confidence and excellence.', whatsappCta: 'Contact via WhatsApp', propertiesCta: 'View properties',
+        aboutEyebrow: 'About me', aboutTitle: 'Commitment, integrity, and experience', aboutDescription: 'As a licensed real estate agent in Florida, I provide personalized service and in-depth knowledge of the local market. My goal is to represent every client’s interests with excellence, transparency, and discretion.', brokerageSupport: 'Real estate representation', philosophyTitle: 'Our philosophy', philosophyDescription: 'Every client is unique. Whether you are looking for a primary residence, a vacation home, or ways to grow your investment portfolio, you will receive a strategic plan tailored to your goals.',
+        buyersEyebrow: 'Buy a property', buyersTitle: 'Buyer inquiry', buyersSubject: 'New buyer inquiry', namePlaceholder: 'Full name', emailPlaceholder: 'Email address', phonePlaceholder: 'Phone number', buyerDetailsPlaceholder: 'What kind of property are you looking for?', buyersSubmit: 'Send inquiry',
+        sellersEyebrow: 'Sell a property', sellersTitle: 'Seller inquiry', sellersSubject: 'Property valuation request', addressPlaceholder: 'Property address', propertyDetailsPlaceholder: 'Property details', sellersSubmit: 'Request a valuation',
+        propertiesEyebrow: 'Featured properties', propertiesTitle: 'Find your next property', propertiesDescription: 'Coming soon: exclusive listings in Florida’s finest areas.', footerBrokerage: 'Key & Legacy Realty • Florida', footerWhatsapp: 'Contact via WhatsApp'
+      },
+      it: {
+        pageTitle: 'Reynier Sambrine | Key & Legacy Realty',
+        pageDescription: 'Consulenza immobiliare in Florida. Compra, vendi e investi con Reynier Sambrine e Key & Legacy Realty.',
+        languageLabel: 'Seleziona la lingua', navAbout: 'Chi sono', navBuyers: 'Acquirenti', navSellers: 'Venditori', navProperties: 'Immobili', navContact: 'Contatti',
+        heroBadge: 'Miami REALTORS® & NABOR Member • Key & Legacy Realty', heroTitle: 'Costruisci il tuo futuro immobiliare', heroEmphasis: 'con prestigio',
+        heroDescription: 'Consulenza immobiliare di alto livello in Florida. Compra, vendi e investi con fiducia e professionalità.', whatsappCta: 'Contattami su WhatsApp', propertiesCta: 'Vedi gli immobili',
+        aboutEyebrow: 'Chi sono', aboutTitle: 'Impegno, integrità ed esperienza', aboutDescription: 'Come agente immobiliare abilitato in Florida, offro un servizio personalizzato e una conoscenza approfondita del mercato locale. Il mio obiettivo è tutelare gli interessi di ogni cliente con professionalità, trasparenza e discrezione.', brokerageSupport: 'Supporto immobiliare', philosophyTitle: 'La mia filosofia', philosophyDescription: 'Ogni cliente è unico. Che tu stia cercando la tua residenza principale, una casa per le vacanze o opportunità per ampliare il tuo portafoglio d’investimento, riceverai un piano strategico su misura per i tuoi obiettivi.',
+        buyersEyebrow: 'Acquista un immobile', buyersTitle: 'Richiesta acquirenti', buyersSubject: 'Nuova richiesta acquirente', namePlaceholder: 'Nome completo', emailPlaceholder: 'Indirizzo email', phonePlaceholder: 'Numero di telefono', buyerDetailsPlaceholder: 'Che tipo di immobile stai cercando?', buyersSubmit: 'Invia richiesta',
+        sellersEyebrow: 'Vendi un immobile', sellersTitle: 'Richiesta venditori', sellersSubject: 'Richiesta di valutazione immobiliare', addressPlaceholder: 'Indirizzo dell’immobile', propertyDetailsPlaceholder: 'Dettagli dell’immobile', sellersSubmit: 'Richiedi una valutazione',
+        propertiesEyebrow: 'Immobili in evidenza', propertiesTitle: 'Trova il tuo prossimo immobile', propertiesDescription: 'Prossimamente: immobili esclusivi nelle migliori zone della Florida.', footerBrokerage: 'Key & Legacy Realty • Florida', footerWhatsapp: 'Contattami su WhatsApp'
+      }
+    };
+
+    const languageSelector = document.getElementById('language-selector');
+    function setLanguage(language) {
+      const selectedLanguage = translations[language] ? language : 'es';
+      const dictionary = translations[selectedLanguage];
+      document.documentElement.lang = selectedLanguage;
+      document.title = dictionary.pageTitle;
+      document.querySelector('meta[name="description"]').content = dictionary.pageDescription;
+      document.querySelectorAll('[data-i18n]').forEach((element) => {
+        const translatedText = dictionary[element.dataset.i18n];
+        if (translatedText) element.textContent = translatedText;
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach((element) => {
+        const translatedText = dictionary[element.dataset.i18nPlaceholder];
+        if (translatedText) element.placeholder = translatedText;
+      });
+      document.querySelectorAll('[data-i18n-value]').forEach((element) => {
+        const translatedText = dictionary[element.dataset.i18nValue];
+        if (translatedText) element.value = translatedText;
+      });
+      languageSelector.value = selectedLanguage;
+      localStorage.setItem('preferred-language', selectedLanguage);
+    }
+
+    languageSelector.addEventListener('change', (event) => setLanguage(event.target.value));
+    const savedLanguage = localStorage.getItem('preferred-language');
+    setLanguage(savedLanguage || 'es');
+  </script>
 </body>
 </html>
