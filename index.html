@@ -3,13 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Asesoría inmobiliaria personalizada en Florida con Reynier Sambrine.">
   <title>Reynier Sambrine | Real Estate Broker Associate</title>
-  <meta name="description" content="Asesoría inmobiliaria en Florida. Compra, venta e inversión con Reynier Sambrine.">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style>
     html { scroll-behavior: smooth; }
     body { background: #101114; color: #fff; }
-    .hero-image { background-image: linear-gradient(90deg, rgba(10,12,16,.88) 0%, rgba(10,12,16,.58) 48%, rgba(10,12,16,.12) 100%), linear-gradient(0deg, rgba(10,12,16,.4), transparent 55%), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2400&q=85'); background-size: cover; background-position: center; }
+    .hero-image { background-image: linear-gradient(90deg, rgba(10,12,16,.88), rgba(10,12,16,.42)), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2400&q=85'); background-size: cover; background-position: center; }
+    .editorial { font-family: Georgia, 'Times New Roman', serif; }
+    .light-section { color: #14213a; background: #f7f3eb; }
+    .light-section input, .light-section select, .light-section textarea { color: #14213a; background: #fbf8f2; border: 1px solid #ded5c7; }
+    .light-section input:focus, .light-section select:focus, .light-section textarea:focus { outline: 2px solid #c9a35f; outline-offset: 1px; }
   </style>
 </head>
 <body class="font-sans antialiased">
@@ -23,19 +27,17 @@
         </div>
       </a>
       <label for="language-selector" class="sr-only" data-i18n="languageLabel">Seleccionar idioma</label>
-      <select id="language-selector" aria-label="Seleccionar idioma" class="shrink-0 rounded-lg border border-[#C6A15B]/50 bg-[#142B49] px-3 py-2 text-sm font-semibold text-white outline-none focus:border-[#C6A15B]">
-        <option value="es">Español</option>
-        <option value="en">English</option>
-        <option value="it">Italiano</option>
+      <select id="language-selector" aria-label="Seleccionar idioma" class="shrink-0 rounded-lg border border-[#C6A15B]/50 bg-[#142B49] px-3 py-2 text-sm font-semibold text-white">
+        <option value="es">Español</option><option value="en">English</option><option value="it">Italiano</option>
       </select>
     </div>
-    <nav aria-label="Navegación principal" class="mx-auto flex max-w-7xl justify-end gap-8 overflow-x-auto px-4 pb-4 text-sm font-medium text-slate-300 sm:px-6 lg:px-8">
-      <a href="#about" data-i18n="navAbout" class="shrink-0 transition hover:text-[#C6A15B]">Sobre mí</a>
-      <a href="#buyers-sellers" data-i18n="navBuySell" class="shrink-0 transition hover:text-[#C6A15B]">Comprar/Vender</a>
-      <a href="#properties" data-i18n="navProperties" class="shrink-0 transition hover:text-[#C6A15B]">Propiedades/Terrenos</a>
-      <a href="#areas" data-i18n="navAreas" class="shrink-0 transition hover:text-[#C6A15B]">Áreas de servicio</a>
-      <a href="#testimonials" data-i18n="navTestimonials" class="shrink-0 transition hover:text-[#C6A15B]">Testimonios</a>
-      <a href="#contact" data-i18n="navContact" class="shrink-0 transition hover:text-[#C6A15B]">Contacto</a>
+    <nav aria-label="Navegación principal" class="mx-auto flex max-w-7xl justify-end gap-6 overflow-x-auto px-4 pb-4 text-sm font-medium text-slate-300 sm:px-6 lg:px-8">
+      <a href="#about" data-i18n="navAbout" class="shrink-0 hover:text-[#C6A15B]">Sobre mí</a>
+      <a href="#buyers-sellers" data-i18n="navBuySell" class="shrink-0 hover:text-[#C6A15B]">Comprar/Vender</a>
+      <a href="#properties" data-i18n="navProperties" class="shrink-0 hover:text-[#C6A15B]">Propiedades/Terrenos</a>
+      <a href="#areas" data-i18n="navAreas" class="shrink-0 hover:text-[#C6A15B]">Áreas de servicio</a>
+      <a href="#testimonials" data-i18n="navTestimonials" class="shrink-0 hover:text-[#C6A15B]">Testimonios</a>
+      <a href="#contact" data-i18n="navContact" class="shrink-0 hover:text-[#C6A15B]">Contacto</a>
     </nav>
   </header>
 
@@ -43,14 +45,13 @@
     <section id="inicio" class="hero-image flex min-h-[620px] items-end border-b border-slate-800 sm:min-h-[700px] lg:min-h-[760px]">
       <div class="mx-auto w-full max-w-7xl px-5 pb-16 pt-28 sm:px-8 sm:pb-20 lg:pb-24">
         <div class="max-w-3xl space-y-6">
-          <span data-i18n="heroBadge" class="inline-block rounded-full border border-[#C6A15B]/40 bg-black/40 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#E1C27A] backdrop-blur">Miami REALTORS® & NABOR Member • Real Estate Broker Associate</span>
+          <span class="inline-block rounded-full border border-[#C6A15B]/40 bg-black/40 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#E1C27A]" data-i18n="heroBadge">Miami REALTORS® & NABOR Member • Real Estate Broker Associate</span>
           <h1 class="text-4xl font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-7xl"><span data-i18n="heroTitle">Encuentra tu hogar de lujo con</span> <span data-i18n="heroEmphasis" class="text-[#E1C27A]">asesoría experta</span></h1>
           <p data-i18n="heroDescription" class="max-w-2xl text-lg leading-relaxed text-slate-200 sm:text-xl">Te acompaño en la compra, venta e inversión inmobiliaria en Florida con asesoría personalizada y conocimiento local.</p>
           <div class="flex flex-col gap-4 pt-2 sm:flex-row">
-            <a href="https://wa.me/message/KHW7EZR2I6AQK1" target="_blank" rel="noopener noreferrer" data-i18n="whatsappCta" class="rounded-lg bg-[#E1C27A] px-7 py-4 text-center font-bold text-[#101114] transition hover:bg-[#c6a15b]">Agenda una consulta</a>
-            <a href="#properties" data-i18n="propertiesCta" class="rounded-lg border border-white/60 bg-black/20 px-7 py-4 text-center font-semibold text-white backdrop-blur transition hover:bg-white/10">Ver propiedades</a>
+            <a href="https://wa.me/message/KHW7EZR2I6AQK1" target="_blank" rel="noopener noreferrer" data-i18n="whatsappCta" class="rounded-lg bg-[#E1C27A] px-7 py-4 text-center font-bold text-[#101114] hover:bg-[#c6a15b]">Agenda una consulta</a>
+            <a href="#properties" data-i18n="propertiesCta" class="rounded-lg border border-white/60 bg-black/20 px-7 py-4 text-center font-semibold text-white hover:bg-white/10">Ver propiedades</a>
           </div>
-          <p data-i18n="heroTrust" class="pt-4 text-xs font-semibold uppercase tracking-[.25em] text-slate-300">Asesoría local • Servicio personalizado • Florida</p>
         </div>
       </div>
     </section>
@@ -60,116 +61,162 @@
         <div class="order-2 space-y-6 lg:order-1">
           <span data-i18n="aboutEyebrow" class="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">Sobre mí</span>
           <h2 data-i18n="aboutTitle" class="text-3xl font-bold sm:text-4xl">Compromiso, integridad y trayectoria</h2>
-          <p data-i18n="aboutDescription" class="leading-relaxed text-slate-300">Como agente licenciado en el estado de Florida, ofrezco atención personalizada y conocimiento profundo del mercado inmobiliario. Mi objetivo es representar los intereses de cada cliente con excelencia, transparencia y discreción.</p>
-          <div class="rounded-2xl border border-[#C6A15B]/25 bg-[#142B49]/50 p-5">
-            <h3 data-i18n="philosophyTitle" class="mb-2 font-bold text-[#E1C27A]">Filosofía de trabajo</h3>
-            <p data-i18n="philosophyDescription" class="text-sm leading-relaxed text-slate-300">Cada cliente es único. Recibirás un plan estratégico adaptado a tus objetivos, ya sea comprar tu hogar, vender una propiedad o invertir.</p>
+          <p data-i18n="aboutDescription" class="leading-relaxed text-slate-300">Como agente licenciado en Florida, ofrezco atención personalizada y conocimiento profundo del mercado. Represento los intereses de cada cliente con excelencia, transparencia y discreción.</p>
+          <div class="rounded-2xl border border-[#C6A15B]/25 bg-[#142B49]/50 p-5"><h3 data-i18n="philosophyTitle" class="mb-2 font-bold text-[#E1C27A]">Filosofía de trabajo</h3><p data-i18n="philosophyDescription" class="text-sm leading-relaxed text-slate-300">Cada cliente es único. Recibirás un plan estratégico adaptado a tus objetivos inmobiliarios.</p></div>
+        </div>
+        <div class="order-1 mx-auto w-full max-w-md lg:order-2"><img src="./foto.jpg.jpg" alt="Reynier Sambrine, asesor inmobiliario" class="aspect-[4/5] w-full rounded-2xl object-cover shadow-2xl"></div>
+      </div>
+    </section>
+
+    <section id="buyers-sellers" class="light-section scroll-mt-28 py-16 sm:py-20">
+      <div class="mx-auto max-w-7xl space-y-16 px-4 sm:px-6 lg:px-8">
+        <!-- BUYER: process first -->
+        <div>
+          <p data-i18n="buyEyebrow" class="mb-4 text-xs font-bold uppercase tracking-[.28em] text-[#c99c4e]">Comprar una casa</p>
+          <h2 data-i18n="buyHeadline" class="editorial max-w-3xl text-4xl leading-tight text-[#141414] sm:text-5xl">Encuentra el hogar ideal con un plan claro.</h2>
+          <p data-i18n="buyIntro" class="mt-5 max-w-2xl text-base leading-7 text-slate-600">Comprar una casa es una de las decisiones más importantes de tu vida. Te guío desde la preaprobación hasta el día en que recibes las llaves.</p>
+          <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            <article class="rounded-2xl border border-slate-200 bg-white p-5"><span class="editorial text-2xl text-[#c99c4e]">01</span><h3 data-i18n="buyStep1Title" class="editorial mt-3 text-lg">Consulta</h3><p data-i18n="buyStep1Text" class="mt-2 text-sm leading-6 text-slate-600">Definimos tus metas, presupuesto y zonas de interés.</p></article>
+            <article class="rounded-2xl border border-slate-200 bg-white p-5"><span class="editorial text-2xl text-[#c99c4e]">02</span><h3 data-i18n="buyStep2Title" class="editorial mt-3 text-lg">Preaprobación</h3><p data-i18n="buyStep2Text" class="mt-2 text-sm leading-6 text-slate-600">Te conecto con prestamistas de confianza.</p></article>
+            <article class="rounded-2xl border border-slate-200 bg-white p-5"><span class="editorial text-2xl text-[#c99c4e]">03</span><h3 data-i18n="buyStep3Title" class="editorial mt-3 text-lg">Búsqueda</h3><p data-i18n="buyStep3Text" class="mt-2 text-sm leading-6 text-slate-600">Acceso a propiedades y oportunidades del mercado.</p></article>
+            <article class="rounded-2xl border border-slate-200 bg-white p-5"><span class="editorial text-2xl text-[#c99c4e]">04</span><h3 data-i18n="buyStep4Title" class="editorial mt-3 text-lg">Oferta y negociación</h3><p data-i18n="buyStep4Text" class="mt-2 text-sm leading-6 text-slate-600">Estrategia para obtener el mejor precio y condiciones.</p></article>
+            <article class="rounded-2xl border border-slate-200 bg-white p-5"><span class="editorial text-2xl text-[#c99c4e]">05</span><h3 data-i18n="buyStep5Title" class="editorial mt-3 text-lg">Cierre</h3><p data-i18n="buyStep5Text" class="mt-2 text-sm leading-6 text-slate-600">Inspección, tasación, título y firma, sin sorpresas.</p></article>
           </div>
         </div>
-        <div class="order-1 mx-auto w-full max-w-md lg:order-2">
-          <img src="./foto.jpg.jpg" alt="Reynier Sambrine, asesor inmobiliario" class="aspect-[4/5] w-full rounded-2xl object-cover shadow-2xl shadow-black/40">
-        </div>
-      </div>
-    </section>
 
-    <section id="buyers-sellers" class="scroll-mt-28 bg-[#142B49]/30 py-20">
-      <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-        <div class="rounded-3xl border border-slate-800 bg-[#101114] p-8 shadow-2xl">
-          <span data-i18n="buyersEyebrow" class="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">Comprar una propiedad</span>
-          <h2 data-i18n="buyersTitle" class="mb-6 mt-1 text-2xl font-bold">Hablemos de lo que buscas</h2>
+        <!-- Mortgage calculator then buyer inquiry form -->
+        <div class="grid items-start gap-6 lg:grid-cols-2">
+          <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-9" aria-labelledby="mortgage-heading">
+            <h3 id="mortgage-heading" data-i18n="mortgageTitle" class="editorial mb-6 text-2xl text-[#141414] sm:text-3xl">Calculadora de Hipoteca</h3>
+            <div class="grid gap-x-4 gap-y-4 sm:grid-cols-2">
+              <label class="text-sm text-slate-600"><span data-i18n="housePriceLabel">Precio de la casa ($)</span><input id="house-price" type="number" min="1" step="1000" value="450000" class="mt-2 w-full rounded-xl px-4 py-4 text-base"></label>
+              <label class="text-sm text-slate-600"><span data-i18n="downPaymentLabel">Pago inicial (%)</span><input id="down-payment" type="number" min="0" max="100" step="0.5" value="10" class="mt-2 w-full rounded-xl px-4 py-4 text-base"></label>
+              <label class="text-sm text-slate-600"><span data-i18n="interestRateLabel">Tasa de interés (%)</span><input id="interest-rate" type="number" min="0" max="30" step="0.05" value="6.5" class="mt-2 w-full rounded-xl px-4 py-4 text-base"></label>
+              <label class="text-sm text-slate-600"><span data-i18n="loanTermLabel">Plazo (años)</span><select id="loan-term" class="mt-2 w-full rounded-xl px-4 py-4 text-base"><option value="15">15</option><option value="20">20</option><option value="30" selected>30</option></select></label>
+              <label class="text-sm text-slate-600"><span data-i18n="taxRateLabel">Impuestos anuales (%)</span><input id="tax-rate" type="number" min="0" max="10" step="0.1" value="1.8" class="mt-2 w-full rounded-xl px-4 py-4 text-base"></label>
+              <label class="text-sm text-slate-600"><span data-i18n="insuranceLabel">Seguro anual ($)</span><input id="annual-insurance" type="number" min="0" step="100" value="4200" class="mt-2 w-full rounded-xl px-4 py-4 text-base"></label>
+            </div>
+            <div class="mt-6 rounded-2xl bg-[#172f50] p-6 text-white">
+              <p data-i18n="estimatedPayment" class="text-sm text-slate-200">Pago mensual estimado</p>
+              <p id="monthly-payment" class="editorial mt-2 text-4xl text-[#e2b45e]">$0</p>
+              <p id="payment-breakdown" class="mt-2 text-xs leading-5 text-slate-200"></p>
+            </div>
+            <p data-i18n="mortgageDisclaimer" class="mt-5 text-xs leading-5 text-slate-500">Estimación informativa. No incluye HOA ni seguro hipotecario (PMI). Consulta con un prestamista.</p>
+          </section>
+
+          <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-9" aria-labelledby="buyer-form-heading">
+            <h3 id="buyer-form-heading" data-i18n="buyerFormTitle" class="editorial mb-6 text-2xl text-[#141414] sm:text-3xl">Cuéntame qué buscas</h3>
+            <form action="https://formsubmit.co/Sambrinereynier@gmail.com" method="POST" class="space-y-4">
+              <input type="hidden" name="_subject" data-i18n-value="buyerEmailSubject" value="Nueva solicitud de compra">
+              <input type="hidden" name="_captcha" value="false">
+              <label class="block text-sm text-slate-600"><span data-i18n="fullNameLabel">Nombre completo</span><input name="name" type="text" required autocomplete="name" class="mt-2 w-full rounded-xl px-4 py-4"></label>
+              <div class="grid gap-4 sm:grid-cols-2">
+                <label class="block text-sm text-slate-600"><span data-i18n="emailLabel">Email</span><input name="email" type="email" required autocomplete="email" class="mt-2 w-full rounded-xl px-4 py-4"></label>
+                <label class="block text-sm text-slate-600"><span data-i18n="phoneLabel">Teléfono</span><input name="phone" type="tel" autocomplete="tel" class="mt-2 w-full rounded-xl px-4 py-4"></label>
+              </div>
+              <div class="grid gap-4 sm:grid-cols-2">
+                <label class="block text-sm text-slate-600"><span data-i18n="budgetLabel">Presupuesto</span><select name="budget" class="mt-2 w-full rounded-xl px-4 py-4"><option data-i18n="budget1" value="under-300k">&lt; $300K</option><option data-i18n="budget2" value="300-500k">$300K–$500K</option><option data-i18n="budget3" value="500-750k">$500K–$750K</option><option data-i18n="budget4" value="750k-plus">$750K+</option></select></label>
+                <label class="block text-sm text-slate-600"><span data-i18n="propertyTypeLabel">Tipo de propiedad</span><select name="property_type" class="mt-2 w-full rounded-xl px-4 py-4"><option data-i18n="typeHouse" value="single-family">Casa / Single-family</option><option data-i18n="typeCondo" value="condo">Condominio</option><option data-i18n="typeTownhouse" value="townhouse">Townhouse</option><option data-i18n="typeLand" value="land">Terreno</option><option data-i18n="typeOther" value="other">Otro</option></select></label>
+              </div>
+              <label class="block text-sm text-slate-600"><span data-i18n="citiesLabel">Ciudades o detalles</span><textarea name="details" rows="4" class="mt-2 w-full rounded-xl px-4 py-4"></textarea></label>
+              <button type="submit" data-i18n="sendInquiry" class="w-full rounded-full bg-[#c9a35f] px-6 py-4 font-semibold text-[#151515] hover:bg-[#b68d4d]">Enviar solicitud</button>
+            </form>
+          </section>
+        </div>
+
+        <!-- SELLER: marketing plan then valuation form -->
+        <div class="border-t border-[#ded5c7] pt-16">
+          <p data-i18n="sellEyebrow" class="mb-4 text-xs font-bold uppercase tracking-[.28em] text-[#c99c4e]">Vende tu propiedad</p>
+          <h2 data-i18n="sellHeadline" class="editorial max-w-3xl text-4xl leading-tight text-[#141414] sm:text-5xl">Vende al mejor precio, en el menor tiempo.</h2>
+          <p data-i18n="sellIntro" class="mt-5 max-w-2xl text-base leading-7 text-slate-600">Un plan de marketing completo para que tu propiedad destaque y atraiga a los compradores correctos.</p>
+          <div class="mt-10 grid border border-[#ded5c7] sm:grid-cols-2 lg:grid-cols-3">
+            <article class="border-b border-[#ded5c7] p-6 sm:border-r"><span class="text-xs font-bold tracking-[.2em] text-[#c99c4e]">01</span><h3 data-i18n="sellStep1Title" class="editorial mt-3 text-xl">Análisis de mercado gratuito</h3><p data-i18n="sellStep1Text" class="mt-2 text-sm leading-6 text-slate-600">Valoración basada en ventas comparables recientes de tu zona.</p></article>
+            <article class="border-b border-[#ded5c7] p-6 lg:border-r"><span class="text-xs font-bold tracking-[.2em] text-[#c99c4e]">02</span><h3 data-i18n="sellStep2Title" class="editorial mt-3 text-xl">Fotografía y video profesional</h3><p data-i18n="sellStep2Text" class="mt-2 text-sm leading-6 text-slate-600">Material visual de calidad para mostrar tu propiedad.</p></article>
+            <article class="border-b border-[#ded5c7] p-6 sm:border-r lg:border-r-0"><span class="text-xs font-bold tracking-[.2em] text-[#c99c4e]">03</span><h3 data-i18n="sellStep3Title" class="editorial mt-3 text-xl">Marketing digital bilingüe</h3><p data-i18n="sellStep3Text" class="mt-2 text-sm leading-6 text-slate-600">MLS, portales principales, redes sociales y promoción.</p></article>
+            <article class="border-b border-[#ded5c7] p-6 lg:border-b-0 lg:border-r"><span class="text-xs font-bold tracking-[.2em] text-[#c99c4e]">04</span><h3 data-i18n="sellStep4Title" class="editorial mt-3 text-xl">Preparación y staging</h3><p data-i18n="sellStep4Text" class="mt-2 text-sm leading-6 text-slate-600">Recomendaciones para presentar mejor tu propiedad.</p></article>
+            <article class="border-b border-[#ded5c7] p-6 sm:border-r sm:border-b-0"><span class="text-xs font-bold tracking-[.2em] text-[#c99c4e]">05</span><h3 data-i18n="sellStep5Title" class="editorial mt-3 text-xl">Negociación experta</h3><p data-i18n="sellStep5Text" class="mt-2 text-sm leading-6 text-slate-600">Revisamos ofertas y protegemos tus intereses.</p></article>
+            <article class="p-6"><span class="text-xs font-bold tracking-[.2em] text-[#c99c4e]">06</span><h3 data-i18n="sellStep6Title" class="editorial mt-3 text-xl">Gestión hasta el cierre</h3><p data-i18n="sellStep6Text" class="mt-2 text-sm leading-6 text-slate-600">Coordinación durante el proceso hasta la firma final.</p></article>
+          </div>
+        </div>
+
+        <section class="grid gap-8 rounded-3xl bg-[#172f50] p-6 text-white sm:p-10 lg:grid-cols-[.8fr_1.2fr] lg:items-center" aria-labelledby="valuation-heading">
+          <div><h3 id="valuation-heading" data-i18n="valuationTitle" class="editorial text-3xl sm:text-4xl">¿Cuánto vale tu propiedad?</h3><p data-i18n="valuationIntro" class="mt-4 leading-7 text-slate-200">Solicita una valoración gratuita y sin compromiso. Prepararé un análisis comparativo de mercado personalizado.</p></div>
           <form action="https://formsubmit.co/Sambrinereynier@gmail.com" method="POST" class="space-y-4">
-            <input type="hidden" name="_subject" data-i18n-value="buyersSubject" value="Nuevo cliente comprador">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="text" name="name" required data-i18n-placeholder="namePlaceholder" placeholder="Nombre completo" class="w-full rounded-xl border border-slate-800 bg-[#101114] px-4 py-3 text-white outline-none focus:border-[#C6A15B]">
-            <input type="email" name="email" required data-i18n-placeholder="emailPlaceholder" placeholder="Correo electrónico" class="w-full rounded-xl border border-slate-800 bg-[#101114] px-4 py-3 text-white outline-none focus:border-[#C6A15B]">
-            <input type="tel" name="phone" required data-i18n-placeholder="phonePlaceholder" placeholder="Teléfono" class="w-full rounded-xl border border-slate-800 bg-[#101114] px-4 py-3 text-white outline-none focus:border-[#C6A15B]">
-            <textarea name="details" rows="3" data-i18n-placeholder="buyerDetailsPlaceholder" placeholder="Cuéntame qué tipo de propiedad buscas" class="w-full rounded-xl border border-slate-800 bg-[#101114] px-4 py-3 text-white outline-none focus:border-[#C6A15B]"></textarea>
-            <button type="submit" data-i18n="buyersSubmit" class="w-full rounded-xl bg-[#C6A15B] py-3.5 font-bold text-[#101114] transition hover:bg-[#b08d4a]">Enviar solicitud</button>
+            <input type="hidden" name="_subject" data-i18n-value="valuationEmailSubject" value="Solicitud de valoración de propiedad"><input type="hidden" name="_captcha" value="false">
+            <label class="block text-sm text-slate-200"><span data-i18n="propertyAddressLabel">Dirección de la propiedad</span><input name="address" required class="mt-2 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-4 text-white placeholder:text-slate-400"></label>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <label class="block text-sm text-slate-200"><span data-i18n="sellerNameLabel">Nombre</span><input name="name" required class="mt-2 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-4 text-white"></label>
+              <label class="block text-sm text-slate-200"><span data-i18n="emailLabel">Email</span><input name="email" type="email" required class="mt-2 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-4 text-white"></label>
+              <label class="block text-sm text-slate-200"><span data-i18n="phoneLabel">Teléfono</span><input name="phone" type="tel" class="mt-2 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-4 text-white"></label>
+              <label class="block text-sm text-slate-200"><span data-i18n="sellTimelineLabel">¿Cuándo deseas vender?</span><select name="timeline" class="mt-2 w-full rounded-xl border border-white/20 bg-[#243c5a] px-4 py-4 text-white"><option data-i18n="timeline1" value="0-3">0–3 meses</option><option data-i18n="timeline2" value="3-6">3–6 meses</option><option data-i18n="timeline6" value="6-plus">6+ meses</option><option data-i18n="timelineExploring" value="exploring">Solo estoy explorando</option></select></label>
+            </div>
+            <label class="block text-sm text-slate-200"><span data-i18n="homeDetailsLabel">Detalles (habitaciones, baños, mejoras)</span><textarea name="details" rows="3" class="mt-2 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-4 text-white"></textarea></label>
+            <button type="submit" data-i18n="valuationSubmit" class="w-full rounded-full bg-[#c9a35f] px-6 py-4 font-semibold text-[#151515] hover:bg-[#b68d4d]">Solicitar valoración gratis</button>
           </form>
-        </div>
-        <div class="rounded-3xl border border-slate-800 bg-[#101114] p-8 shadow-2xl">
-          <span data-i18n="sellersEyebrow" class="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">Vender una propiedad</span>
-          <h2 data-i18n="sellersTitle" class="mb-6 mt-1 text-2xl font-bold">Solicita una valoración</h2>
-          <form action="https://formsubmit.co/Sambrinereynier@gmail.com" method="POST" class="space-y-4">
-            <input type="hidden" name="_subject" data-i18n-value="sellersSubject" value="Solicitud de valoración">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="text" name="name" required data-i18n-placeholder="namePlaceholder" placeholder="Nombre completo" class="w-full rounded-xl border border-slate-800 bg-[#101114] px-4 py-3 text-white outline-none focus:border-[#C6A15B]">
-            <input type="email" name="email" required data-i18n-placeholder="emailPlaceholder" placeholder="Correo electrónico" class="w-full rounded-xl border border-slate-800 bg-[#101114] px-4 py-3 text-white outline-none focus:border-[#C6A15B]">
-            <input type="text" name="address" required data-i18n-placeholder="addressPlaceholder" placeholder="Dirección de la propiedad" class="w-full rounded-xl border border-slate-800 bg-[#101114] px-4 py-3 text-white outline-none focus:border-[#C6A15B]">
-            <textarea name="details" rows="3" data-i18n-placeholder="propertyDetailsPlaceholder" placeholder="Detalles de la propiedad" class="w-full rounded-xl border border-slate-800 bg-[#101114] px-4 py-3 text-white outline-none focus:border-[#C6A15B]"></textarea>
-            <button type="submit" data-i18n="sellersSubmit" class="w-full rounded-xl bg-[#C6A15B] py-3.5 font-bold text-[#101114] transition hover:bg-[#b08d4a]">Solicitar valoración</button>
-          </form>
-        </div>
+        </section>
       </div>
     </section>
 
-    <section id="properties" class="scroll-mt-28 border-t border-slate-800 bg-[#101114] py-20">
-      <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-        <span data-i18n="propertiesEyebrow" class="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">Propiedades y terrenos</span>
-        <h2 data-i18n="propertiesTitle" class="mt-2 text-3xl font-bold sm:text-4xl">Encuentra tu próxima propiedad</h2>
-        <p data-i18n="propertiesDescription" class="mx-auto mt-4 max-w-2xl text-slate-300">Próximamente: propiedades y terrenos exclusivos en las mejores zonas de Florida.</p>
-      </div>
-    </section>
-
-    <section id="areas" class="scroll-mt-28 border-t border-slate-800 bg-[#142B49]/30 py-20">
-      <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-        <span data-i18n="areasEyebrow" class="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">Áreas de servicio</span>
-        <h2 data-i18n="areasTitle" class="mt-2 text-3xl font-bold sm:text-4xl">Miami y el sur de Florida</h2>
-      </div>
-    </section>
-
-    <section id="testimonials" class="scroll-mt-28 border-t border-slate-800 bg-[#101114] py-20">
-      <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-        <span data-i18n="testimonialsEyebrow" class="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">Testimonios</span>
-        <h2 data-i18n="testimonialsTitle" class="mt-2 text-3xl font-bold sm:text-4xl">Experiencias de nuestros clientes</h2>
-      </div>
-    </section>
+    <section id="properties" class="scroll-mt-28 border-t border-slate-800 bg-[#101114] py-20"><div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8"><span data-i18n="propertiesEyebrow" class="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">Propiedades y terrenos</span><h2 data-i18n="propertiesTitle" class="mt-2 text-3xl font-bold sm:text-4xl">Encuentra tu próxima propiedad</h2><p data-i18n="propertiesDescription" class="mx-auto mt-4 max-w-2xl text-slate-300">Próximamente: propiedades y terrenos exclusivos en las mejores zonas de Florida.</p></div></section>
+    <section id="areas" class="scroll-mt-28 border-t border-slate-800 bg-[#142B49]/30 py-20"><div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8"><span data-i18n="areasEyebrow" class="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">Áreas de servicio</span><h2 data-i18n="areasTitle" class="mt-2 text-3xl font-bold sm:text-4xl">Miami y el sur de Florida</h2></div></section>
+    <section id="testimonials" class="scroll-mt-28 border-t border-slate-800 bg-[#101114] py-20"><div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8"><span data-i18n="testimonialsEyebrow" class="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">Testimonios</span><h2 data-i18n="testimonialsTitle" class="mt-2 text-3xl font-bold sm:text-4xl">Experiencias de nuestros clientes</h2></div></section>
   </main>
 
-  <footer id="contact" class="scroll-mt-28 border-t border-slate-800 bg-[#101114] py-10">
-    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-center sm:px-6 md:flex-row md:text-left lg:px-8">
-      <div>
-        <p class="text-xl font-bold">Reynier Sambrine</p>
-        <p data-i18n="footerBrokerage" class="text-sm text-slate-400">Real Estate Broker Associate • Florida</p>
-      </div>
-      <a href="https://wa.me/message/KHW7EZR2I6AQK1" target="_blank" rel="noopener noreferrer" data-i18n="footerWhatsapp" class="rounded-xl bg-[#C6A15B] px-6 py-3 font-bold text-[#101114]">Contactar por WhatsApp</a>
-    </div>
-  </footer>
+  <footer id="contact" class="scroll-mt-28 border-t border-slate-800 bg-[#101114] py-10"><div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-center sm:px-6 md:flex-row md:text-left lg:px-8"><div><p class="text-xl font-bold">Reynier Sambrine</p><p class="text-sm text-slate-400">Real Estate Broker Associate • Florida</p></div><a href="https://wa.me/message/KHW7EZR2I6AQK1" target="_blank" rel="noopener noreferrer" data-i18n="footerWhatsapp" class="rounded-xl bg-[#C6A15B] px-6 py-3 font-bold text-[#101114]">Contactar por WhatsApp</a></div></footer>
 
   <script>
     const translations = {
       es: {
-        languageLabel:'Seleccionar idioma',navAbout:'Sobre mí',navBuySell:'Comprar/Vender',navProperties:'Propiedades/Terrenos',navAreas:'Áreas de servicio',navTestimonials:'Testimonios',navContact:'Contacto',heroBadge:'Miami REALTORS® & NABOR Member • Real Estate Broker Associate',heroTitle:'Encuentra tu hogar de lujo con',heroEmphasis:'asesoría experta',heroDescription:'Te acompaño en la compra, venta e inversión inmobiliaria en Florida con asesoría personalizada y conocimiento local.',whatsappCta:'Agenda una consulta',propertiesCta:'Ver propiedades',heroTrust:'Asesoría local • Servicio personalizado • Florida',aboutEyebrow:'Sobre mí',aboutTitle:'Compromiso, integridad y trayectoria',aboutDescription:'Como agente licenciado en el estado de Florida, ofrezco atención personalizada y conocimiento profundo del mercado inmobiliario. Mi objetivo es representar los intereses de cada cliente con excelencia, transparencia y discreción.',philosophyTitle:'Filosofía de trabajo',philosophyDescription:'Cada cliente es único. Recibirás un plan estratégico adaptado a tus objetivos, ya sea comprar tu hogar, vender una propiedad o invertir.',buyersEyebrow:'Comprar una propiedad',buyersTitle:'Hablemos de lo que buscas',buyersSubject:'Nuevo cliente comprador',namePlaceholder:'Nombre completo',emailPlaceholder:'Correo electrónico',phonePlaceholder:'Teléfono',buyerDetailsPlaceholder:'Cuéntame qué tipo de propiedad buscas',buyersSubmit:'Enviar solicitud',sellersEyebrow:'Vender una propiedad',sellersTitle:'Solicita una valoración',sellersSubject:'Solicitud de valoración',addressPlaceholder:'Dirección de la propiedad',propertyDetailsPlaceholder:'Detalles de la propiedad',sellersSubmit:'Solicitar valoración',propertiesEyebrow:'Propiedades y terrenos',propertiesTitle:'Encuentra tu próxima propiedad',propertiesDescription:'Próximamente: propiedades y terrenos exclusivos en las mejores zonas de Florida.',areasEyebrow:'Áreas de servicio',areasTitle:'Miami y el sur de Florida',testimonialsEyebrow:'Testimonios',testimonialsTitle:'Experiencias de nuestros clientes',footerBrokerage:'Real Estate Broker Associate • Florida',footerWhatsapp:'Contactar por WhatsApp'
+        languageLabel:'Seleccionar idioma',navAbout:'Sobre mí',navBuySell:'Comprar/Vender',navProperties:'Propiedades/Terrenos',navAreas:'Áreas de servicio',navTestimonials:'Testimonios',navContact:'Contacto',heroBadge:'Miami REALTORS® & NABOR Member • Real Estate Broker Associate',heroTitle:'Encuentra tu hogar de lujo con',heroEmphasis:'asesoría experta',heroDescription:'Te acompaño en la compra, venta e inversión inmobiliaria en Florida con asesoría personalizada y conocimiento local.',whatsappCta:'Agenda una consulta',propertiesCta:'Ver propiedades',aboutEyebrow:'Sobre mí',aboutTitle:'Compromiso, integridad y trayectoria',aboutDescription:'Como agente licenciado en Florida, ofrezco atención personalizada y conocimiento profundo del mercado. Represento los intereses de cada cliente con excelencia, transparencia y discreción.',philosophyTitle:'Filosofía de trabajo',philosophyDescription:'Cada cliente es único. Recibirás un plan estratégico adaptado a tus objetivos inmobiliarios.',buyEyebrow:'Comprar una casa',buyHeadline:'Encuentra el hogar ideal con un plan claro.',buyIntro:'Comprar una casa es una de las decisiones más importantes de tu vida. Te guío desde la preaprobación hasta el día en que recibes las llaves.',buyStep1Title:'Consulta',buyStep1Text:'Definimos tus metas, presupuesto y zonas de interés.',buyStep2Title:'Preaprobación',buyStep2Text:'Te conecto con prestamistas de confianza.',buyStep3Title:'Búsqueda',buyStep3Text:'Acceso a propiedades y oportunidades del mercado.',buyStep4Title:'Oferta y negociación',buyStep4Text:'Estrategia para obtener el mejor precio y condiciones.',buyStep5Title:'Cierre',buyStep5Text:'Inspección, tasación, título y firma, sin sorpresas.',mortgageTitle:'Calculadora de Hipoteca',housePriceLabel:'Precio de la casa ($)',downPaymentLabel:'Pago inicial (%)',interestRateLabel:'Tasa de interés (%)',loanTermLabel:'Plazo (años)',taxRateLabel:'Impuestos anuales (%)',insuranceLabel:'Seguro anual ($)',estimatedPayment:'Pago mensual estimado',mortgageDisclaimer:'Estimación informativa. No incluye HOA ni seguro hipotecario (PMI). Consulta con un prestamista.',buyerFormTitle:'Cuéntame qué buscas',fullNameLabel:'Nombre completo',emailLabel:'Email',phoneLabel:'Teléfono',budgetLabel:'Presupuesto',budget1:'< $300K',budget2:'$300K–$500K',budget3:'$500K–$750K',budget4:'$750K+',propertyTypeLabel:'Tipo de propiedad',typeHouse:'Casa / Single-family',typeCondo:'Condominio',typeTownhouse:'Townhouse',typeLand:'Terreno',typeOther:'Otro',citiesLabel:'Ciudades o detalles',sendInquiry:'Enviar solicitud',buyerEmailSubject:'Nueva solicitud de compra',sellEyebrow:'Vende tu propiedad',sellHeadline:'Vende al mejor precio, en el menor tiempo.',sellIntro:'Un plan de marketing completo para que tu propiedad destaque y atraiga a los compradores correctos.',sellStep1Title:'Análisis de mercado gratuito',sellStep1Text:'Valoración basada en ventas comparables recientes de tu zona.',sellStep2Title:'Fotografía y video profesional',sellStep2Text:'Material visual de calidad para mostrar tu propiedad.',sellStep3Title:'Marketing digital bilingüe',sellStep3Text:'MLS, portales principales, redes sociales y promoción.',sellStep4Title:'Preparación y staging',sellStep4Text:'Recomendaciones para presentar mejor tu propiedad.',sellStep5Title:'Negociación experta',sellStep5Text:'Revisamos ofertas y protegemos tus intereses.',sellStep6Title:'Gestión hasta el cierre',sellStep6Text:'Coordinación durante el proceso hasta la firma final.',valuationTitle:'¿Cuánto vale tu propiedad?',valuationIntro:'Solicita una valoración gratuita y sin compromiso. Prepararé un análisis comparativo de mercado personalizado.',propertyAddressLabel:'Dirección de la propiedad',sellerNameLabel:'Nombre',sellTimelineLabel:'¿Cuándo deseas vender?',timeline1:'0–3 meses',timeline2:'3–6 meses',timeline6:'6+ meses',timelineExploring:'Solo estoy explorando',homeDetailsLabel:'Detalles (habitaciones, baños, mejoras)',valuationSubmit:'Solicitar valoración gratis',valuationEmailSubject:'Solicitud de valoración de propiedad',propertiesEyebrow:'Propiedades y terrenos',propertiesTitle:'Encuentra tu próxima propiedad',propertiesDescription:'Próximamente: propiedades y terrenos exclusivos en las mejores zonas de Florida.',areasEyebrow:'Áreas de servicio',areasTitle:'Miami y el sur de Florida',testimonialsEyebrow:'Testimonios',testimonialsTitle:'Experiencias de nuestros clientes',footerWhatsapp:'Contactar por WhatsApp'
       },
       en: {
-        languageLabel:'Select language',navAbout:'About me',navBuySell:'Buy/Sell',navProperties:'Properties/Land',navAreas:'Service areas',navTestimonials:'Testimonials',navContact:'Contact',heroBadge:'Miami REALTORS® & NABOR Member • Real Estate Broker Associate',heroTitle:'Find your luxury home with',heroEmphasis:'expert guidance',heroDescription:'I guide you through buying, selling, and investing in Florida real estate with personalized advice and local expertise.',whatsappCta:'Book a consultation',propertiesCta:'View properties',heroTrust:'Local expertise • Personal service • Florida',aboutEyebrow:'About me',aboutTitle:'Commitment, integrity, and experience',aboutDescription:'As a licensed real estate agent in Florida, I provide personalized service and in-depth knowledge of the local market. My goal is to represent every client’s interests with excellence, transparency, and discretion.',philosophyTitle:'Our philosophy',philosophyDescription:'Every client is unique. You will receive a strategic plan tailored to your goals, whether you are buying a home, selling a property, or investing.',buyersEyebrow:'Buy a property',buyersTitle:'Let’s talk about what you need',buyersSubject:'New buyer inquiry',namePlaceholder:'Full name',emailPlaceholder:'Email address',phonePlaceholder:'Phone number',buyerDetailsPlaceholder:'Tell me what kind of property you are looking for',buyersSubmit:'Send inquiry',sellersEyebrow:'Sell a property',sellersTitle:'Request a property valuation',sellersSubject:'Property valuation request',addressPlaceholder:'Property address',propertyDetailsPlaceholder:'Property details',sellersSubmit:'Request a valuation',propertiesEyebrow:'Properties and land',propertiesTitle:'Find your next property',propertiesDescription:'Coming soon: exclusive properties and land in Florida’s finest areas.',areasEyebrow:'Service areas',areasTitle:'Miami and South Florida',testimonialsEyebrow:'Testimonials',testimonialsTitle:'Our clients’ experiences',footerBrokerage:'Real Estate Broker Associate • Florida',footerWhatsapp:'Contact via WhatsApp'
+        languageLabel:'Select language',navAbout:'About me',navBuySell:'Buy/Sell',navProperties:'Properties/Land',navAreas:'Service areas',navTestimonials:'Testimonials',navContact:'Contact',heroBadge:'Miami REALTORS® & NABOR Member • Real Estate Broker Associate',heroTitle:'Find your luxury home with',heroEmphasis:'expert guidance',heroDescription:'I guide you through buying, selling, and investing in Florida real estate with personalized advice and local expertise.',whatsappCta:'Book a consultation',propertiesCta:'View properties',aboutEyebrow:'About me',aboutTitle:'Commitment, integrity, and experience',aboutDescription:'As a licensed real estate agent in Florida, I provide personalized service and in-depth market knowledge. I represent each client with excellence, transparency, and discretion.',philosophyTitle:'My approach',philosophyDescription:'Every client is unique. You will receive a strategic plan tailored to your real estate goals.',buyEyebrow:'Buy a home',buyHeadline:'Find the right home with a clear plan.',buyIntro:'Buying a home is one of life’s biggest decisions. I guide you from pre-approval through the day you receive the keys.',buyStep1Title:'Consultation',buyStep1Text:'We define your goals, budget, and preferred areas.',buyStep2Title:'Pre-approval',buyStep2Text:'I connect you with trusted lenders.',buyStep3Title:'Home search',buyStep3Text:'Access to listings and market opportunities.',buyStep4Title:'Offer and negotiation',buyStep4Text:'A strategy to secure the best price and terms.',buyStep5Title:'Closing',buyStep5Text:'Inspection, appraisal, title, and signing with no surprises.',mortgageTitle:'Mortgage Calculator',housePriceLabel:'Home price ($)',downPaymentLabel:'Down payment (%)',interestRateLabel:'Interest rate (%)',loanTermLabel:'Term (years)',taxRateLabel:'Annual property tax (%)',insuranceLabel:'Annual insurance ($)',estimatedPayment:'Estimated monthly payment',mortgageDisclaimer:'Estimate for informational purposes. Excludes HOA and PMI. Consult a lender.',buyerFormTitle:'Tell me what you’re looking for',fullNameLabel:'Full name',emailLabel:'Email',phoneLabel:'Phone',budgetLabel:'Budget',budget1:'< $300K',budget2:'$300K–$500K',budget3:'$500K–$750K',budget4:'$750K+',propertyTypeLabel:'Property type',typeHouse:'Single-family home',typeCondo:'Condo',typeTownhouse:'Townhouse',typeLand:'Land',typeOther:'Other',citiesLabel:'Cities or details',sendInquiry:'Send inquiry',buyerEmailSubject:'New home buyer inquiry',sellEyebrow:'Sell your property',sellHeadline:'Sell for the best price, in less time.',sellIntro:'A complete marketing plan to help your property stand out and attract the right buyers.',sellStep1Title:'Free market analysis',sellStep1Text:'Valuation based on recent comparable sales in your area.',sellStep2Title:'Professional photo and video',sellStep2Text:'Quality visual materials to showcase your property.',sellStep3Title:'Bilingual digital marketing',sellStep3Text:'MLS, major portals, social media, and promotion.',sellStep4Title:'Preparation and staging',sellStep4Text:'Recommendations to present your property at its best.',sellStep5Title:'Expert negotiation',sellStep5Text:'We review offers and protect your interests.',sellStep6Title:'Guidance through closing',sellStep6Text:'Coordination throughout the process until signing.',valuationTitle:'What is your property worth?',valuationIntro:'Request a free, no-obligation valuation and a personalized comparative market analysis.',propertyAddressLabel:'Property address',sellerNameLabel:'Name',sellTimelineLabel:'When are you looking to sell?',timeline1:'0–3 months',timeline2:'3–6 months',timeline6:'6+ months',timelineExploring:'Just exploring',homeDetailsLabel:'Details (beds, baths, upgrades)',valuationSubmit:'Request a free valuation',valuationEmailSubject:'Property valuation request',propertiesEyebrow:'Properties and land',propertiesTitle:'Find your next property',propertiesDescription:'Coming soon: exclusive properties and land in Florida’s finest areas.',areasEyebrow:'Service areas',areasTitle:'Miami and South Florida',testimonialsEyebrow:'Testimonials',testimonialsTitle:'Our clients’ experiences',footerWhatsapp:'Contact via WhatsApp'
       },
       it: {
-        languageLabel:'Seleziona la lingua',navAbout:'Chi sono',navBuySell:'Compra/Vendi',navProperties:'Immobili/Terreni',navAreas:'Zone servite',navTestimonials:'Testimonianze',navContact:'Contatti',heroBadge:'Miami REALTORS® & NABOR Member • Real Estate Broker Associate',heroTitle:'Trova la tua casa di lusso con',heroEmphasis:'consulenza esperta',heroDescription:'Ti accompagno nell’acquisto, nella vendita e negli investimenti immobiliari in Florida con consulenza personalizzata e conoscenza del territorio.',whatsappCta:'Prenota una consulenza',propertiesCta:'Vedi gli immobili',heroTrust:'Competenza locale • Servizio personalizzato • Florida',aboutEyebrow:'Chi sono',aboutTitle:'Impegno, integrità ed esperienza',aboutDescription:'Come agente immobiliare abilitato in Florida, offro un servizio personalizzato e una conoscenza approfondita del mercato locale. Il mio obiettivo è tutelare gli interessi di ogni cliente con professionalità, trasparenza e discrezione.',philosophyTitle:'La mia filosofia',philosophyDescription:'Ogni cliente è unico. Riceverai un piano strategico su misura per i tuoi obiettivi, che tu voglia acquistare una casa, vendere un immobile o investire.',buyersEyebrow:'Acquista un immobile',buyersTitle:'Parliamo di ciò che cerchi',buyersSubject:'Nuova richiesta acquirente',namePlaceholder:'Nome completo',emailPlaceholder:'Indirizzo email',phonePlaceholder:'Numero di telefono',buyerDetailsPlaceholder:'Che tipo di immobile stai cercando?',buyersSubmit:'Invia richiesta',sellersEyebrow:'Vendi un immobile',sellersTitle:'Richiedi una valutazione',sellersSubject:'Richiesta di valutazione immobiliare',addressPlaceholder:'Indirizzo dell’immobile',propertyDetailsPlaceholder:'Dettagli dell’immobile',sellersSubmit:'Richiedi una valutazione',propertiesEyebrow:'Immobili e terreni',propertiesTitle:'Trova il tuo prossimo immobile',propertiesDescription:'Prossimamente: immobili e terreni esclusivi nelle migliori zone della Florida.',areasEyebrow:'Zone servite',areasTitle:'Miami e sud della Florida',testimonialsEyebrow:'Testimonianze',testimonialsTitle:'Le esperienze dei nostri clienti',footerBrokerage:'Real Estate Broker Associate • Florida',footerWhatsapp:'Contattami su WhatsApp'
+        languageLabel:'Seleziona la lingua',navAbout:'Chi sono',navBuySell:'Compra/Vendi',navProperties:'Immobili/Terreni',navAreas:'Zone servite',navTestimonials:'Testimonianze',navContact:'Contatti',heroBadge:'Miami REALTORS® & NABOR Member • Real Estate Broker Associate',heroTitle:'Trova la tua casa di lusso con',heroEmphasis:'consulenza esperta',heroDescription:'Ti accompagno nell’acquisto, nella vendita e negli investimenti immobiliari in Florida con consulenza personalizzata e conoscenza del territorio.',whatsappCta:'Prenota una consulenza',propertiesCta:'Vedi gli immobili',aboutEyebrow:'Chi sono',aboutTitle:'Impegno, integrità ed esperienza',aboutDescription:'Come agente immobiliare abilitato in Florida, offro un servizio personalizzato e una conoscenza approfondita del mercato. Rappresento ogni cliente con professionalità, trasparenza e discrezione.',philosophyTitle:'Il mio approccio',philosophyDescription:'Ogni cliente è unico. Riceverai un piano strategico su misura per i tuoi obiettivi immobiliari.',buyEyebrow:'Acquista casa',buyHeadline:'Trova la casa ideale con un piano chiaro.',buyIntro:'Comprare casa è una delle decisioni più importanti della vita. Ti accompagno dalla pre-approvazione fino alla consegna delle chiavi.',buyStep1Title:'Consulenza',buyStep1Text:'Definiamo obiettivi, budget e zone di interesse.',buyStep2Title:'Pre-approvazione',buyStep2Text:'Ti metto in contatto con finanziatori affidabili.',buyStep3Title:'Ricerca',buyStep3Text:'Accesso a immobili e opportunità di mercato.',buyStep4Title:'Offerta e negoziazione',buyStep4Text:'Strategia per ottenere il prezzo e le condizioni migliori.',buyStep5Title:'Chiusura',buyStep5Text:'Ispezione, valutazione, titolo e firma senza sorprese.',mortgageTitle:'Calcolatore mutuo',housePriceLabel:'Prezzo della casa ($)',downPaymentLabel:'Anticipo (%)',interestRateLabel:'Tasso d’interesse (%)',loanTermLabel:'Durata (anni)',taxRateLabel:'Imposte annuali (%)',insuranceLabel:'Assicurazione annuale ($)',estimatedPayment:'Rata mensile stimata',mortgageDisclaimer:'Stima informativa. Esclude HOA e assicurazione mutuo (PMI). Consulta un finanziatore.',buyerFormTitle:'Raccontami cosa cerchi',fullNameLabel:'Nome completo',emailLabel:'Email',phoneLabel:'Telefono',budgetLabel:'Budget',budget1:'< $300K',budget2:'$300K–$500K',budget3:'$500K–$750K',budget4:'$750K+',propertyTypeLabel:'Tipo di immobile',typeHouse:'Casa indipendente',typeCondo:'Condominio',typeTownhouse:'Townhouse',typeLand:'Terreno',typeOther:'Altro',citiesLabel:'Città o dettagli',sendInquiry:'Invia richiesta',buyerEmailSubject:'Nuova richiesta acquisto casa',sellEyebrow:'Vendi il tuo immobile',sellHeadline:'Vendi al miglior prezzo, in meno tempo.',sellIntro:'Un piano marketing completo per valorizzare il tuo immobile e raggiungere gli acquirenti giusti.',sellStep1Title:'Analisi di mercato gratuita',sellStep1Text:'Valutazione basata sulle vendite comparabili recenti della zona.',sellStep2Title:'Foto e video professionali',sellStep2Text:'Materiale visivo di qualità per presentare l’immobile.',sellStep3Title:'Marketing digitale bilingue',sellStep3Text:'MLS, portali principali, social media e promozione.',sellStep4Title:'Preparazione e staging',sellStep4Text:'Consigli per presentare al meglio il tuo immobile.',sellStep5Title:'Negoziazione esperta',sellStep5Text:'Esaminiamo le offerte e tuteliamo i tuoi interessi.',sellStep6Title:'Assistenza fino alla chiusura',sellStep6Text:'Coordinamento durante tutto il processo fino alla firma.',valuationTitle:'Quanto vale il tuo immobile?',valuationIntro:'Richiedi una valutazione gratuita e senza impegno con analisi comparativa personalizzata.',propertyAddressLabel:'Indirizzo dell’immobile',sellerNameLabel:'Nome',sellTimelineLabel:'Quando desideri vendere?',timeline1:'0–3 mesi',timeline2:'3–6 mesi',timeline6:'Oltre 6 mesi',timelineExploring:'Sto solo valutando',homeDetailsLabel:'Dettagli (camere, bagni, migliorie)',valuationSubmit:'Richiedi valutazione gratuita',valuationEmailSubject:'Richiesta valutazione immobile',propertiesEyebrow:'Immobili e terreni',propertiesTitle:'Trova il tuo prossimo immobile',propertiesDescription:'Prossimamente: immobili e terreni esclusivi nelle migliori zone della Florida.',areasEyebrow:'Zone servite',areasTitle:'Miami e sud della Florida',testimonialsEyebrow:'Testimonianze',testimonialsTitle:'Le esperienze dei nostri clienti',footerWhatsapp:'Contattami su WhatsApp'
       }
     };
+
     const languageSelector = document.getElementById('language-selector');
     function setLanguage(language) {
-      const selectedLanguage = translations[language] ? language : 'es';
-      const dictionary = translations[selectedLanguage];
-      document.documentElement.lang = selectedLanguage;
-      document.querySelectorAll('[data-i18n]').forEach((element) => {
-        const text = dictionary[element.dataset.i18n];
-        if (text) element.textContent = text;
-      });
-      document.querySelectorAll('[data-i18n-placeholder]').forEach((element) => {
-        const text = dictionary[element.dataset.i18nPlaceholder];
-        if (text) element.placeholder = text;
-      });
-      document.querySelectorAll('[data-i18n-value]').forEach((element) => {
-        const text = dictionary[element.dataset.i18nValue];
-        if (text) element.value = text;
-      });
-      languageSelector.value = selectedLanguage;
-      localStorage.setItem('preferred-language', selectedLanguage);
+      const chosen = translations[language] ? language : 'es';
+      const dictionary = translations[chosen];
+      document.documentElement.lang = chosen;
+      document.querySelectorAll('[data-i18n]').forEach((el) => { const text = dictionary[el.dataset.i18n]; if (text) el.textContent = text; });
+      document.querySelectorAll('[data-i18n-value]').forEach((el) => { const text = dictionary[el.dataset.i18nValue]; if (text) el.value = text; });
+      languageSelector.value = chosen;
+      localStorage.setItem('preferred-language', chosen);
     }
     languageSelector.addEventListener('change', (event) => setLanguage(event.target.value));
     setLanguage(localStorage.getItem('preferred-language') || 'es');
+
+    const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+    function calculateMortgage() {
+      const price = Math.max(0, Number(document.getElementById('house-price').value) || 0);
+      const downPercent = Math.min(100, Math.max(0, Number(document.getElementById('down-payment').value) || 0));
+      const annualRate = Math.max(0, Number(document.getElementById('interest-rate').value) || 0) / 100;
+      const years = Number(document.getElementById('loan-term').value) || 30;
+      const taxRate = Math.max(0, Number(document.getElementById('tax-rate').value) || 0) / 100;
+      const insurance = Math.max(0, Number(document.getElementById('annual-insurance').value) || 0);
+      const principal = price * (1 - downPercent / 100);
+      const months = years * 12;
+      const monthlyRate = annualRate / 12;
+      const principalInterest = monthlyRate === 0 ? principal / months : principal * monthlyRate / (1 - Math.pow(1 + monthlyRate, -months));
+      const monthlyTax = price * taxRate / 12;
+      const monthlyInsurance = insurance / 12;
+      const total = principalInterest + monthlyTax + monthlyInsurance;
+      document.getElementById('monthly-payment').textContent = money.format(total);
+      const breakdown = document.getElementById('payment-breakdown');
+      const language = languageSelector.value;
+      breakdown.textContent = language === 'en'
+        ? `Principal & interest ${money.format(principalInterest)} · Taxes ${money.format(monthlyTax)} · Insurance ${money.format(monthlyInsurance)} · Loan ${money.format(principal)}`
+        : language === 'it'
+          ? `Capitale e interessi ${money.format(principalInterest)} · Imposte ${money.format(monthlyTax)} · Assicurazione ${money.format(monthlyInsurance)} · Mutuo ${money.format(principal)}`
+          : `Capital e intereses ${money.format(principalInterest)} · Impuestos ${money.format(monthlyTax)} · Seguro ${money.format(monthlyInsurance)} · Préstamo ${money.format(principal)}`;
+    }
+    document.querySelectorAll('#house-price,#down-payment,#interest-rate,#loan-term,#tax-rate,#annual-insurance').forEach((input) => input.addEventListener('input', calculateMortgage));
+    languageSelector.addEventListener('change', calculateMortgage);
+    calculateMortgage();
   </script>
 </body>
 </html>
