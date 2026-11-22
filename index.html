@@ -224,7 +224,29 @@
         <p data-i18n="areasFooter" class="mt-10 text-center text-sm leading-6 text-slate-600">¿No ves tu ciudad? Trabajo en todo el estado a través de la red de Key &amp; Legacy Realty.</p>
       </div>
     </section>
-    <section id="testimonials" class="scroll-mt-28 border-t border-slate-800 bg-[#101114] py-20"><div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8"><span data-i18n="testimonialsEyebrow" class="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">Testimonios</span><h2 data-i18n="testimonialsTitle" class="mt-2 text-3xl font-bold sm:text-4xl">Experiencias de nuestros clientes</h2></div></section>
+    <section id="testimonials" aria-labelledby="testimonials-title" class="light-section scroll-mt-28 py-16 sm:py-20 lg:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center gap-3">
+          <span class="h-px w-10 bg-[#c99c4e]" aria-hidden="true"></span>
+          <span data-i18n="testimonialsEyebrow" class="text-xs font-bold uppercase tracking-widest text-[#9a6b27]">Testimonios</span>
+        </div>
+        <h2 id="testimonials-title" data-i18n="testimonialsTitle" class="editorial mt-5 text-4xl leading-tight sm:text-5xl lg:text-6xl">Lo que dicen mis clientes.</h2>
+        <p id="testimonials-empty" data-i18n="testimonialsEmpty" class="mt-8 text-sm leading-7 text-slate-600">Próximamente compartiré testimonios de mis clientes.</p>
+        <ul id="testimonials-list" class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"></ul>
+        <template id="testimonial-card">
+          <li>
+            <article class="flex h-full flex-col rounded-2xl border border-[#e7e0d5] bg-white p-6 shadow-sm sm:p-7">
+              <div class="text-lg tracking-widest text-[#a66e19]"><span data-stars aria-hidden="true"></span><span data-rating class="sr-only"></span></div>
+              <blockquote class="editorial mt-5 flex-1 text-xl leading-relaxed text-[#14213a]"><p data-quote></p></blockquote>
+              <footer class="mt-6 border-t border-[#e7e0d5] pt-5">
+                <p data-name class="font-semibold text-[#14213a]"></p>
+                <p class="mt-1 text-sm text-slate-600"><span data-role></span> · <span data-region></span></p>
+              </footer>
+            </article>
+          </li>
+        </template>
+      </div>
+    </section>
   </main>
 
   <section id="contact" class="scroll-mt-28 border-t border-slate-800 bg-[#101114] py-16 sm:py-20 lg:py-24">
@@ -364,13 +386,57 @@
       }
     };
 
+    const testimonialTranslations = {
+      es: {
+        testimonialsEyebrow:'Testimonios', testimonialsTitle:'Lo que dicen mis clientes.',
+        testimonialsEmpty:'Próximamente compartiré testimonios de mis clientes.',
+        buyer:'Comprador/a', seller:'Vendedor/a', investor:'Inversionista', rating:'{rating} de 5 estrellas'
+      },
+      en: {
+        testimonialsEyebrow:'Testimonials', testimonialsTitle:'What my clients say.',
+        testimonialsEmpty:'Client testimonials will be shared here soon.',
+        buyer:'Buyer', seller:'Seller', investor:'Investor', rating:'{rating} out of 5 stars'
+      },
+      it: {
+        testimonialsEyebrow:'Testimonianze', testimonialsTitle:'Cosa dicono i miei clienti.',
+        testimonialsEmpty:'Le testimonianze dei miei clienti saranno condivise qui prossimamente.',
+        buyer:'Acquirente', seller:'Venditore/Venditrice', investor:'Investitore/Investitrice', rating:'{rating} stelle su 5'
+      }
+    };
+
+    // Add verified entries with quote: {es, en, it} (available translations only), rating: 1–5, name, role: buyer/seller/investor, and region.
+    const testimonials = [];
+
+    function renderTestimonials(language) {
+      const list = document.getElementById('testimonials-list');
+      const empty = document.getElementById('testimonials-empty');
+      const dictionary = testimonialTranslations[language];
+      list.replaceChildren();
+      testimonials.forEach((testimonial) => {
+        const quoteLanguage = testimonial.quote[language] ? language : Object.keys(testimonial.quote).find((key) => testimonial.quote[key]);
+        const card = document.getElementById('testimonial-card').content.cloneNode(true);
+        const quote = card.querySelector('[data-quote]');
+        quote.textContent = testimonial.quote[quoteLanguage];
+        quote.lang = quoteLanguage;
+        card.querySelector('[data-stars]').textContent = '★'.repeat(testimonial.rating) + '☆'.repeat(5 - testimonial.rating);
+        card.querySelector('[data-rating]').textContent = dictionary.rating.replace('{rating}', testimonial.rating);
+        card.querySelector('[data-name]').textContent = testimonial.name;
+        card.querySelector('[data-role]').textContent = dictionary[testimonial.role];
+        card.querySelector('[data-region]').textContent = testimonial.region;
+        list.appendChild(card);
+      });
+      empty.hidden = testimonials.length > 0;
+      list.classList.toggle('mt-10', testimonials.length > 0);
+    }
+
     const languageSelector = document.getElementById('language-selector');
     function setLanguage(language) {
       const chosen = translations[language] ? language : 'es';
-      const dictionary = { ...translations[chosen], ...aboutTranslations[chosen], ...areasTranslations[chosen], ...contactTranslations[chosen] };
+      const dictionary = { ...translations[chosen], ...aboutTranslations[chosen], ...areasTranslations[chosen], ...contactTranslations[chosen], ...testimonialTranslations[chosen] };
       document.documentElement.lang = chosen;
       document.querySelectorAll('[data-i18n]').forEach((el) => { const text = dictionary[el.dataset.i18n]; if (text) el.textContent = text; });
       document.querySelectorAll('[data-i18n-value]').forEach((el) => { const text = dictionary[el.dataset.i18nValue]; if (text) el.value = text; });
+      renderTestimonials(chosen);
       languageSelector.value = chosen;
       localStorage.setItem('preferred-language', chosen);
     }
