@@ -339,7 +339,7 @@
               <blockquote class="editorial mt-5 flex-1 text-xl leading-relaxed text-[#14213a]"><p data-quote></p></blockquote>
               <footer class="mt-6 border-t border-[#e7e0d5] pt-5">
                 <p data-name class="font-semibold text-[#14213a]"></p>
-                <p class="mt-1 text-sm text-slate-600"><span data-role></span> · <span data-region></span></p>
+                <p class="mt-1 text-sm text-slate-600"><span data-role-container><span data-role></span> · </span><span data-region></span></p>
               </footer>
             </article>
           </li>
@@ -506,13 +506,19 @@
       }
     };
 
-    // Add verified entries with quote: {es, en, it} (available translations only), optional rating: 1–5, name, role: buyer/seller/investor, and region.
+    // Add verified entries with quote: {es, en, it} (available translations only), optional rating: 1–5, name, optional role: buyer/seller/investor, and region.
     const testimonials = [{
       quote: {
         es: 'La mejor experiencia de mi vida, gracias por realizar mi sueño. Cuando había perdido las esperanzas encontré a este excelente Realtor que me ayudó y guió en el camino a cumplir mi sueño de comprar mi casa. El proceso fue emocionante y el final fue increíble. Gracias.'
       },
       name: 'Yeensy',
       role: 'buyer',
+      region: 'Lehigh Acres'
+    }, {
+      quote: {
+        es: 'Gracias por tu gran apoyo y trabajo, por lograr mi sueño, estoy muy feliz y agradecida y no me arrepiento de haberte escogido como mi Realtor, ¡eres el mejor! Bendiciones.'
+      },
+      name: 'Maralys',
       region: 'Lehigh Acres'
     }];
 
@@ -534,7 +540,10 @@
           card.querySelector('[data-rating]').textContent = dictionary.rating.replace('{rating}', testimonial.rating);
         }
         card.querySelector('[data-name]').textContent = testimonial.name;
-        card.querySelector('[data-role]').textContent = dictionary[testimonial.role];
+        card.querySelector('[data-role-container]').hidden = !testimonial.role;
+        if (testimonial.role) {
+          card.querySelector('[data-role]').textContent = dictionary[testimonial.role];
+        }
         card.querySelector('[data-region]').textContent = testimonial.region;
         list.appendChild(card);
       });
