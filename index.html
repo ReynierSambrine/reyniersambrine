@@ -9,24 +9,48 @@
   <style>
     :root { color-scheme: light; }
     html { scroll-behavior: smooth; scroll-padding-top: 13rem; }
-    body { background: #080e18; color: #fff; }
+    body { margin: 0; background: #f8f7f4; color: #14213a; font-family: Arial, Helvetica, sans-serif; }
     .editorial, h1, h2 { font-family: Georgia, 'Times New Roman', serif; }
     h1, h2 { font-weight: 400; letter-spacing: -.035em; }
     a, button, input, select, textarea { transition: color .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
     :focus-visible { outline: 3px solid #d4ae69; outline-offset: 3px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
     header {
-      background: rgba(8, 15, 27, .96);
-      border-color: rgba(212, 174, 105, .2);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, .12);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, .96);
+      border-color: #e8e1d5;
+      box-shadow: 0 8px 30px rgba(20, 33, 58, .06);
     }
-    header > div { min-height: 11rem; }
-    header > div > a { gap: .75rem; }
-    header > div > a img { width: 10rem; height: 10rem; filter: brightness(1.25) contrast(1.05); }
-    header > div > a span:first-child { font-size: clamp(1.35rem, 3vw, 2.4rem); letter-spacing: .08em; line-height: 1.15; }
-    header > div > a span:last-child { margin-top: .35rem; font-size: .9rem; letter-spacing: .15em; line-height: 1.3; }
-    header select { background: #14243b; border-color: rgba(212, 174, 105, .45); }
-    header nav { gap: 2rem; padding-bottom: 1rem; letter-spacing: .025em; }
+    header > div {
+      display: flex;
+      width: 100%;
+      max-width: 80rem;
+      min-height: 6.5rem;
+      margin-inline: auto;
+      padding-inline: 1.5rem;
+      box-sizing: border-box;
+    }
+    header > div > a { display: flex; align-items: center; gap: .75rem; text-decoration: none; }
+    header > div > a img { width: 6.5rem; height: 6.5rem; filter: contrast(1.02); }
+    header > div > a span:first-child { color: #14213a; font-size: clamp(1.15rem, 2.5vw, 1.8rem); letter-spacing: .06em; line-height: 1.15; }
+    header > div > a span:last-child { margin-top: .35rem; color: #a77c36; font-size: .72rem; letter-spacing: .12em; line-height: 1.3; }
+    header select { color: #14213a; background: #fff; border-color: rgba(180, 139, 71, .55); }
+    header > select { margin-left: auto; padding: .6rem .8rem; border-radius: .65rem; }
+    header nav {
+      display: flex;
+      width: 100%;
+      max-width: 80rem;
+      margin-inline: auto;
+      box-sizing: border-box;
+      gap: 1.65rem;
+      padding: 0 1.5rem .85rem;
+      color: #465268;
+      letter-spacing: .025em;
+    }
+    header nav a { flex-shrink: 0; color: inherit; text-decoration: none; }
     header nav a { position: relative; }
     header nav a::after {
       content: '';
@@ -44,25 +68,80 @@
 
     .hero-image {
       position: relative;
-      background-image: linear-gradient(90deg, rgba(5, 12, 23, .95) 0%, rgba(7, 17, 31, .76) 48%, rgba(7, 17, 31, .25) 100%), linear-gradient(0deg, rgba(5, 12, 23, .65), transparent 55%), url('./hero-house.jpg.webp');
-      background-size: cover;
-      background-position: center;
-      border-color: rgba(212, 174, 105, .35);
+      overflow: hidden;
+      background: #f8f7f4;
+      border-color: #e8e1d5;
     }
-    .hero-image > div { padding-top: 8rem; padding-bottom: 7rem; }
-    .hero-image h1 { max-width: 13ch; line-height: 1.05; text-wrap: balance; }
-    .hero-image p { color: #e2e8ef; }
+    .hero-layout {
+      display: grid;
+      width: 100%;
+      max-width: 80rem;
+      margin-inline: auto;
+      box-sizing: border-box;
+      grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+      align-items: center;
+      gap: clamp(2rem, 6vw, 5.5rem);
+      padding-top: clamp(3rem, 6vw, 5rem);
+      padding-bottom: clamp(3rem, 6vw, 5rem);
+    }
+    .hero-copy { position: relative; z-index: 1; max-width: 39rem; }
+    .hero-image h1 {
+      max-width: 18ch;
+      color: #14213a;
+      font-size: clamp(2.65rem, 5vw, 4.65rem);
+      font-weight: 400;
+      line-height: 1.06;
+      text-wrap: balance;
+    }
+    .hero-image h1 [data-i18n="heroEmphasis"] { color: #a77c36; }
+    .hero-image p { color: #526071; }
     .hero-image [data-i18n="heroBadge"] {
-      border-radius: 0;
-      border: 0;
-      border-left: 2px solid #d4ae69;
-      background: transparent;
-      padding: .3rem 0 .3rem 1rem;
-      letter-spacing: .15em;
-      line-height: 1.6;
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid #e8d9bc;
+      border-radius: 999px;
+      background: #fff;
+      padding: .65rem 1rem;
+      color: #8a682e;
+      letter-spacing: .08em;
+      line-height: 1.4;
     }
-    .hero-image a { border-radius: .25rem; }
+    .hero-copy > div.flex { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .hero-image a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3.4rem;
+      box-sizing: border-box;
+      padding: .8rem 1.5rem;
+      border-radius: .65rem;
+      font-size: .95rem;
+      text-decoration: none;
+    }
+    .hero-copy > div.flex a:first-child { background: #d4ae69; color: #101114; font-weight: 700; }
+    .hero-copy > div.flex a:nth-child(2) { border: 1px solid rgba(20, 43, 73, .25); background: #fff; color: #142b49; font-weight: 600; }
     .hero-image a:hover { transform: translateY(-2px); }
+    .hero-visual { position: relative; min-width: 0; margin: 0; }
+    .hero-visual::before {
+      content: '';
+      position: absolute;
+      inset: 1rem -1rem -1rem 1rem;
+      border: 1px solid #c9a35f;
+      border-radius: 1.75rem;
+    }
+    .hero-visual img {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: clamp(21rem, 43vw, 34rem);
+      box-sizing: border-box;
+      border: 6px solid #fff;
+      border-radius: 1.75rem;
+      object-fit: cover;
+      object-position: center;
+      filter: saturate(.82) brightness(1.04);
+      box-shadow: 0 22px 55px rgba(20, 33, 58, .16);
+    }
 
     .light-section { color: #14213a; background: #f8f7f4; }
     .about-section { background: #fff; }
@@ -93,16 +172,25 @@
     #properties h2, #contact h2 { color: #fff; }
 
     @media (max-width: 640px) {
-      html { scroll-padding-top: 10rem; }
-      header > div { min-height: 7rem; padding-left: .5rem; padding-right: .5rem; }
+      html { scroll-padding-top: 8rem; }
+      header > div { min-height: 5rem; padding-left: .5rem; padding-right: .5rem; }
       header > div > a { gap: .35rem; }
-      header > div > a img { width: 6rem; height: 6rem; }
-      header > div > a span:first-child { font-size: clamp(1.05rem, 5vw, 1.4rem); }
-      header > div > a span:last-child { font-size: .7rem; letter-spacing: .08em; }
+      header > div > a img { width: 4.75rem; height: 4.75rem; }
+      header > div > a span:first-child { font-size: clamp(1rem, 4.7vw, 1.3rem); }
+      header > div > a span:last-child { font-size: .58rem; letter-spacing: .07em; }
       header select { padding: .5rem; font-size: .75rem; }
-      header nav { justify-content: flex-start; gap: 1.25rem; padding-bottom: .85rem; }
-      .hero-image { background-position: 60% center; }
-      .hero-image > div { padding-top: 6rem; padding-bottom: 5rem; }
+      header nav { justify-content: flex-start; gap: 1.25rem; padding: 0 .75rem .75rem; overflow-x: auto; white-space: nowrap; }
+      .hero-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-image h1 { max-width: 18ch; font-size: clamp(2.5rem, 11vw, 3.5rem); }
+      .hero-copy > div.flex { align-items: stretch; }
+      .hero-copy > div.flex a { width: 100%; }
+      .hero-visual { margin-right: .75rem; }
+      .hero-visual img { height: 17rem; }
+      .hero-visual::before { inset: .65rem -.75rem -.65rem .65rem; }
+    }
+    @media (min-width: 641px) and (max-width: 900px) {
+      .hero-layout { grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: 2rem; }
+      .hero-image h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -136,17 +224,20 @@
   </header>
 
   <main>
-    <section id="inicio" class="hero-image flex min-h-[620px] items-end border-b border-slate-800 sm:min-h-[700px] lg:min-h-[760px]">
-      <div class="mx-auto w-full max-w-7xl px-5 pb-16 pt-28 sm:px-8 sm:pb-20 lg:pb-24">
-        <div class="max-w-3xl space-y-6">
-          <span class="inline-block rounded-full border border-[#C6A15B]/40 bg-black/40 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#E1C27A]" data-i18n="heroBadge">Miami REALTORS® &amp; NABOR Member • Key &amp; Legacy Realty</span>
-          <h1 class="text-4xl font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-7xl"><span data-i18n="heroTitle">Encuentra tu hogar de lujo con</span> <span data-i18n="heroEmphasis" class="text-[#E1C27A]">asesoría experta</span></h1>
-          <p data-i18n="heroDescription" class="max-w-2xl text-lg leading-relaxed text-slate-200 sm:text-xl">Te acompaño en la compra, venta e inversión inmobiliaria en Florida con asesoría personalizada y conocimiento local.</p>
+    <section id="inicio" class="hero-image border-b">
+      <div class="hero-layout mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-8">
+        <div class="hero-copy space-y-6">
+          <span class="text-xs font-semibold uppercase" data-i18n="heroBadge">Miami REALTORS® &amp; NABOR Member • Key &amp; Legacy Realty</span>
+          <h1><span data-i18n="heroTitle">Tu próximo hogar en Florida, con</span> <span data-i18n="heroEmphasis">asesoría cercana y experta.</span></h1>
+          <p data-i18n="heroDescription" class="max-w-2xl text-lg leading-relaxed sm:text-xl">Te acompaño en la compra, venta e inversión inmobiliaria en Florida con asesoría personalizada y conocimiento local.</p>
           <div class="flex flex-col gap-4 pt-2 sm:flex-row">
-            <a href="https://wa.me/message/KHW7EZR2I6AQK1" target="_blank" rel="noopener noreferrer" data-i18n="whatsappCta" class="rounded-lg bg-[#E1C27A] px-7 py-4 text-center font-bold text-[#101114] hover:bg-[#c6a15b]">Agenda una consulta</a>
-            <a href="#properties" data-i18n="propertiesCta" class="rounded-lg border border-white/60 bg-black/20 px-7 py-4 text-center font-semibold text-white hover:bg-white/10">Ver propiedades</a>
+            <a href="https://wa.me/message/KHW7EZR2I6AQK1" target="_blank" rel="noopener noreferrer" data-i18n="whatsappCta" class="rounded-lg bg-[#E1C27A] px-7 py-4 text-center font-bold text-[#101114] hover:bg-[#c6a15b]">Conversemos sobre tu próximo paso</a>
+            <a href="#properties" data-i18n="propertiesCta" class="rounded-lg border border-[#142B49]/25 bg-white px-7 py-4 text-center font-semibold text-[#142B49] hover:bg-[#f0ede6]">Explorar propiedades</a>
           </div>
         </div>
+        <figure class="hero-visual">
+          <img src="./hero-house.jpg.webp" alt="" fetchpriority="high">
+        </figure>
       </div>
     </section>
 
@@ -385,13 +476,13 @@
   <script>
     const translations = {
       es: {
-        languageLabel:'Seleccionar idioma',navAbout:'Sobre mí',navBuySell:'Comprar/Vender',navProperties:'Propiedades/Terrenos',navAreas:'Áreas de servicio',navTestimonials:'Testimonios',navContact:'Contacto',heroBadge:'Miami REALTORS® & NABOR Member • Key & Legacy Realty',heroTitle:'Encuentra tu hogar de lujo con',heroEmphasis:'asesoría experta',heroDescription:'Te acompaño en la compra, venta e inversión inmobiliaria en Florida con asesoría personalizada y conocimiento local.',whatsappCta:'Agenda una consulta',propertiesCta:'Ver propiedades',aboutEyebrow:'Sobre mí',aboutTitle:'Compromiso, integridad y trayectoria',aboutDescription:'Como agente licenciado en Florida, ofrezco atención personalizada y conocimiento profundo del mercado. Represento los intereses de cada cliente con excelencia, transparencia y discreción.',philosophyTitle:'Filosofía de trabajo',philosophyDescription:'Cada cliente es único. Recibirás un plan estratégico adaptado a tus objetivos inmobiliarios.',buyEyebrow:'Comprar una casa',buyHeadline:'Encuentra el hogar ideal con un plan claro.',buyIntro:'Comprar una casa es una de las decisiones más importantes de tu vida. Te guío desde la preaprobación hasta el día en que recibes las llaves.',buyStep1Title:'Consulta',buyStep1Text:'Definimos tus metas, presupuesto y zonas de interés.',buyStep2Title:'Preaprobación',buyStep2Text:'Te conecto con prestamistas de confianza.',buyStep3Title:'Búsqueda',buyStep3Text:'Acceso a propiedades y oportunidades del mercado.',buyStep4Title:'Oferta y negociación',buyStep4Text:'Estrategia para obtener el mejor precio y condiciones.',buyStep5Title:'Cierre',buyStep5Text:'Inspección, tasación, título y firma, sin sorpresas.',mortgageTitle:'Calculadora de Hipoteca',housePriceLabel:'Precio de la casa ($)',downPaymentLabel:'Pago inicial (%)',interestRateLabel:'Tasa de interés (%)',loanTermLabel:'Plazo (años)',taxRateLabel:'Impuestos anuales ($)',insuranceLabel:'Seguro anual ($)',estimatedPayment:'Pago mensual estimado',mortgageDisclaimer:'Estimación informativa. No incluye HOA ni seguro hipotecario (PMI). Consulta con un prestamista.',buyerFormTitle:'Cuéntame qué buscas',fullNameLabel:'Nombre completo',emailLabel:'Email',phoneLabel:'Teléfono',budgetLabel:'Presupuesto',budget1:'< $300K',budget2:'$300K–$500K',budget3:'$500K–$750K',budget4:'$750K+',propertyTypeLabel:'Tipo de propiedad',typeHouse:'Casa / Single-family',typeCondo:'Condominio',typeTownhouse:'Townhouse',typeLand:'Terreno',typeOther:'Otro',citiesLabel:'Ciudades o detalles',sendInquiry:'Enviar solicitud',buyerEmailSubject:'Nueva solicitud de compra',sellEyebrow:'Vende tu propiedad',sellHeadline:'Vende al mejor precio, en el menor tiempo.',sellIntro:'Un plan de marketing completo para que tu propiedad destaque y atraiga a los compradores correctos.',sellStep1Title:'Análisis de mercado gratuito',sellStep1Text:'Valoración basada en ventas comparables recientes de tu zona.',sellStep2Title:'Fotografía y video profesional',sellStep2Text:'Material visual de calidad para mostrar tu propiedad.',sellStep3Title:'Marketing digital bilingüe',sellStep3Text:'MLS, portales principales, redes sociales y promoción.',sellStep4Title:'Preparación y staging',sellStep4Text:'Recomendaciones para presentar mejor tu propiedad.',sellStep5Title:'Negociación experta',sellStep5Text:'Revisamos ofertas y protegemos tus intereses.',sellStep6Title:'Gestión hasta el cierre',sellStep6Text:'Coordinación durante el proceso hasta la firma final.',valuationTitle:'¿Cuánto vale tu propiedad?',valuationIntro:'Solicita una valoración gratuita y sin compromiso. Prepararé un análisis comparativo de mercado personalizado.',propertyAddressLabel:'Dirección de la propiedad',sellerNameLabel:'Nombre',sellTimelineLabel:'¿Cuándo deseas vender?',timeline1:'0–3 meses',timeline2:'3–6 meses',timeline6:'6+ meses',timelineExploring:'Solo estoy explorando',homeDetailsLabel:'Detalles (habitaciones, baños, mejoras)',valuationSubmit:'Solicitar valoración gratis',valuationEmailSubject:'Solicitud de valoración de propiedad',propertiesEyebrow:'Propiedades y terrenos',propertiesTitle:'Encuentra tu próxima propiedad',propertiesDescription:'Próximamente: propiedades y terrenos exclusivos en las mejores zonas de Florida.',areasEyebrow:'Áreas de servicio',areasTitle:'Miami y el sur de Florida',testimonialsEyebrow:'Testimonios',testimonialsTitle:'Experiencias de nuestros clientes',footerWhatsapp:'Contactar por WhatsApp'
+        languageLabel:'Seleccionar idioma',navAbout:'Sobre mí',navBuySell:'Comprar/Vender',navProperties:'Propiedades/Terrenos',navAreas:'Áreas de servicio',navTestimonials:'Testimonios',navContact:'Contacto',heroBadge:'Miami REALTORS® y NABOR · Key & Legacy Realty',heroTitle:'Tu hogar en Florida empieza con',heroEmphasis:'una asesoría de confianza.',heroDescription:'Compra, vende o invierte con una guía cercana, estrategia clara y conocimiento local.',whatsappCta:'Hablemos de tu próximo paso',propertiesCta:'Explorar propiedades',aboutEyebrow:'Sobre mí',aboutTitle:'Compromiso, integridad y trayectoria',aboutDescription:'Como agente licenciado en Florida, ofrezco atención personalizada y conocimiento profundo del mercado. Represento los intereses de cada cliente con excelencia, transparencia y discreción.',philosophyTitle:'Filosofía de trabajo',philosophyDescription:'Cada cliente es único. Recibirás un plan estratégico adaptado a tus objetivos inmobiliarios.',buyEyebrow:'Comprar una casa',buyHeadline:'Encuentra el hogar ideal con un plan claro.',buyIntro:'Comprar una casa es una de las decisiones más importantes de tu vida. Te guío desde la preaprobación hasta el día en que recibes las llaves.',buyStep1Title:'Consulta',buyStep1Text:'Definimos tus metas, presupuesto y zonas de interés.',buyStep2Title:'Preaprobación',buyStep2Text:'Te conecto con prestamistas de confianza.',buyStep3Title:'Búsqueda',buyStep3Text:'Acceso a propiedades y oportunidades del mercado.',buyStep4Title:'Oferta y negociación',buyStep4Text:'Estrategia para obtener el mejor precio y condiciones.',buyStep5Title:'Cierre',buyStep5Text:'Inspección, tasación, título y firma, sin sorpresas.',mortgageTitle:'Calculadora de Hipoteca',housePriceLabel:'Precio de la casa ($)',downPaymentLabel:'Pago inicial (%)',interestRateLabel:'Tasa de interés (%)',loanTermLabel:'Plazo (años)',taxRateLabel:'Impuestos anuales ($)',insuranceLabel:'Seguro anual ($)',estimatedPayment:'Pago mensual estimado',mortgageDisclaimer:'Estimación informativa. No incluye HOA ni seguro hipotecario (PMI). Consulta con un prestamista.',buyerFormTitle:'Cuéntame qué buscas',fullNameLabel:'Nombre completo',emailLabel:'Email',phoneLabel:'Teléfono',budgetLabel:'Presupuesto',budget1:'< $300K',budget2:'$300K–$500K',budget3:'$500K–$750K',budget4:'$750K+',propertyTypeLabel:'Tipo de propiedad',typeHouse:'Casa / Single-family',typeCondo:'Condominio',typeTownhouse:'Townhouse',typeLand:'Terreno',typeOther:'Otro',citiesLabel:'Ciudades o detalles',sendInquiry:'Enviar solicitud',buyerEmailSubject:'Nueva solicitud de compra',sellEyebrow:'Vende tu propiedad',sellHeadline:'Vende al mejor precio, en el menor tiempo.',sellIntro:'Un plan de marketing completo para que tu propiedad destaque y atraiga a los compradores correctos.',sellStep1Title:'Análisis de mercado gratuito',sellStep1Text:'Valoración basada en ventas comparables recientes de tu zona.',sellStep2Title:'Fotografía y video profesional',sellStep2Text:'Material visual de calidad para mostrar tu propiedad.',sellStep3Title:'Marketing digital bilingüe',sellStep3Text:'MLS, portales principales, redes sociales y promoción.',sellStep4Title:'Preparación y staging',sellStep4Text:'Recomendaciones para presentar mejor tu propiedad.',sellStep5Title:'Negociación experta',sellStep5Text:'Revisamos ofertas y protegemos tus intereses.',sellStep6Title:'Gestión hasta el cierre',sellStep6Text:'Coordinación durante el proceso hasta la firma final.',valuationTitle:'¿Cuánto vale tu propiedad?',valuationIntro:'Solicita una valoración gratuita y sin compromiso. Prepararé un análisis comparativo de mercado personalizado.',propertyAddressLabel:'Dirección de la propiedad',sellerNameLabel:'Nombre',sellTimelineLabel:'¿Cuándo deseas vender?',timeline1:'0–3 meses',timeline2:'3–6 meses',timeline6:'6+ meses',timelineExploring:'Solo estoy explorando',homeDetailsLabel:'Detalles (habitaciones, baños, mejoras)',valuationSubmit:'Solicitar valoración gratis',valuationEmailSubject:'Solicitud de valoración de propiedad',propertiesEyebrow:'Propiedades y terrenos',propertiesTitle:'Encuentra tu próxima propiedad',propertiesDescription:'Próximamente: propiedades y terrenos exclusivos en las mejores zonas de Florida.',areasEyebrow:'Áreas de servicio',areasTitle:'Miami y el sur de Florida',testimonialsEyebrow:'Testimonios',testimonialsTitle:'Experiencias de nuestros clientes',footerWhatsapp:'Contactar por WhatsApp'
       },
       en: {
-        languageLabel:'Select language',navAbout:'About me',navBuySell:'Buy/Sell',navProperties:'Properties/Land',navAreas:'Service areas',navTestimonials:'Testimonials',navContact:'Contact',heroBadge:'Miami REALTORS® & NABOR Member • Key & Legacy Realty',heroTitle:'Find your luxury home with',heroEmphasis:'expert guidance',heroDescription:'I guide you through buying, selling, and investing in Florida real estate with personalized advice and local expertise.',whatsappCta:'Book a consultation',propertiesCta:'View properties',aboutEyebrow:'About me',aboutTitle:'Commitment, integrity, and experience',aboutDescription:'As a licensed real estate agent in Florida, I provide personalized service and in-depth market knowledge. I represent each client with excellence, transparency, and discretion.',philosophyTitle:'My approach',philosophyDescription:'Every client is unique. You will receive a strategic plan tailored to your real estate goals.',buyEyebrow:'Buy a home',buyHeadline:'Find the right home with a clear plan.',buyIntro:'Buying a home is one of life’s biggest decisions. I guide you from pre-approval through the day you receive the keys.',buyStep1Title:'Consultation',buyStep1Text:'We define your goals, budget, and preferred areas.',buyStep2Title:'Pre-approval',buyStep2Text:'I connect you with trusted lenders.',buyStep3Title:'Home search',buyStep3Text:'Access to listings and market opportunities.',buyStep4Title:'Offer and negotiation',buyStep4Text:'A strategy to secure the best price and terms.',buyStep5Title:'Closing',buyStep5Text:'Inspection, appraisal, title, and signing with no surprises.',mortgageTitle:'Mortgage Calculator',housePriceLabel:'Home price ($)',downPaymentLabel:'Down payment (%)',interestRateLabel:'Interest rate (%)',loanTermLabel:'Term (years)',taxRateLabel:'Annual property taxes ($)',insuranceLabel:'Annual insurance ($)',estimatedPayment:'Estimated monthly payment',mortgageDisclaimer:'Estimate for informational purposes. Excludes HOA and PMI. Consult a lender.',buyerFormTitle:'Tell me what you’re looking for',fullNameLabel:'Full name',emailLabel:'Email',phoneLabel:'Phone',budgetLabel:'Budget',budget1:'< $300K',budget2:'$300K–$500K',budget3:'$500K–$750K',budget4:'$750K+',propertyTypeLabel:'Property type',typeHouse:'Single-family home',typeCondo:'Condo',typeTownhouse:'Townhouse',typeLand:'Land',typeOther:'Other',citiesLabel:'Cities or details',sendInquiry:'Send inquiry',buyerEmailSubject:'New home buyer inquiry',sellEyebrow:'Sell your property',sellHeadline:'Sell for the best price, in less time.',sellIntro:'A complete marketing plan to help your property stand out and attract the right buyers.',sellStep1Title:'Free market analysis',sellStep1Text:'Valuation based on recent comparable sales in your area.',sellStep2Title:'Professional photo and video',sellStep2Text:'Quality visual materials to showcase your property.',sellStep3Title:'Bilingual digital marketing',sellStep3Text:'MLS, major portals, social media, and promotion.',sellStep4Title:'Preparation and staging',sellStep4Text:'Recommendations to present your property at its best.',sellStep5Title:'Expert negotiation',sellStep5Text:'We review offers and protect your interests.',sellStep6Title:'Guidance through closing',sellStep6Text:'Coordination throughout the process until signing.',valuationTitle:'What is your property worth?',valuationIntro:'Request a free, no-obligation valuation and a personalized comparative market analysis.',propertyAddressLabel:'Property address',sellerNameLabel:'Name',sellTimelineLabel:'When are you looking to sell?',timeline1:'0–3 months',timeline2:'3–6 months',timeline6:'6+ months',timelineExploring:'Just exploring',homeDetailsLabel:'Details (beds, baths, upgrades)',valuationSubmit:'Request a free valuation',valuationEmailSubject:'Property valuation request',propertiesEyebrow:'Properties and land',propertiesTitle:'Find your next property',propertiesDescription:'Coming soon: exclusive properties and land in Florida’s finest areas.',areasEyebrow:'Service areas',areasTitle:'Miami and South Florida',testimonialsEyebrow:'Testimonials',testimonialsTitle:'Our clients’ experiences',footerWhatsapp:'Contact via WhatsApp'
+        languageLabel:'Select language',navAbout:'About me',navBuySell:'Buy/Sell',navProperties:'Properties/Land',navAreas:'Service areas',navTestimonials:'Testimonials',navContact:'Contact',heroBadge:'Miami REALTORS® & NABOR · Key & Legacy Realty',heroTitle:'Your next home in Florida starts with',heroEmphasis:'guidance you can trust.',heroDescription:'Buy, sell, or invest with personal guidance, a clear strategy, and local expertise.',whatsappCta:'Let’s talk about your next step',propertiesCta:'Explore properties',aboutEyebrow:'About me',aboutTitle:'Commitment, integrity, and experience',aboutDescription:'As a licensed real estate agent in Florida, I provide personalized service and in-depth market knowledge. I represent each client with excellence, transparency, and discretion.',philosophyTitle:'My approach',philosophyDescription:'Every client is unique. You will receive a strategic plan tailored to your real estate goals.',buyEyebrow:'Buy a home',buyHeadline:'Find the right home with a clear plan.',buyIntro:'Buying a home is one of life’s biggest decisions. I guide you from pre-approval through the day you receive the keys.',buyStep1Title:'Consultation',buyStep1Text:'We define your goals, budget, and preferred areas.',buyStep2Title:'Pre-approval',buyStep2Text:'I connect you with trusted lenders.',buyStep3Title:'Home search',buyStep3Text:'Access to listings and market opportunities.',buyStep4Title:'Offer and negotiation',buyStep4Text:'A strategy to secure the best price and terms.',buyStep5Title:'Closing',buyStep5Text:'Inspection, appraisal, title, and signing with no surprises.',mortgageTitle:'Mortgage Calculator',housePriceLabel:'Home price ($)',downPaymentLabel:'Down payment (%)',interestRateLabel:'Interest rate (%)',loanTermLabel:'Term (years)',taxRateLabel:'Annual property taxes ($)',insuranceLabel:'Annual insurance ($)',estimatedPayment:'Estimated monthly payment',mortgageDisclaimer:'Estimate for informational purposes. Excludes HOA and PMI. Consult a lender.',buyerFormTitle:'Tell me what you’re looking for',fullNameLabel:'Full name',emailLabel:'Email',phoneLabel:'Phone',budgetLabel:'Budget',budget1:'< $300K',budget2:'$300K–$500K',budget3:'$500K–$750K',budget4:'$750K+',propertyTypeLabel:'Property type',typeHouse:'Single-family home',typeCondo:'Condo',typeTownhouse:'Townhouse',typeLand:'Land',typeOther:'Other',citiesLabel:'Cities or details',sendInquiry:'Send inquiry',buyerEmailSubject:'New home buyer inquiry',sellEyebrow:'Sell your property',sellHeadline:'Sell for the best price, in less time.',sellIntro:'A complete marketing plan to help your property stand out and attract the right buyers.',sellStep1Title:'Free market analysis',sellStep1Text:'Valuation based on recent comparable sales in your area.',sellStep2Title:'Professional photo and video',sellStep2Text:'Quality visual materials to showcase your property.',sellStep3Title:'Bilingual digital marketing',sellStep3Text:'MLS, major portals, social media, and promotion.',sellStep4Title:'Preparation and staging',sellStep4Text:'Recommendations to present your property at its best.',sellStep5Title:'Expert negotiation',sellStep5Text:'We review offers and protect your interests.',sellStep6Title:'Guidance through closing',sellStep6Text:'Coordination throughout the process until signing.',valuationTitle:'What is your property worth?',valuationIntro:'Request a free, no-obligation valuation and a personalized comparative market analysis.',propertyAddressLabel:'Property address',sellerNameLabel:'Name',sellTimelineLabel:'When are you looking to sell?',timeline1:'0–3 months',timeline2:'3–6 months',timeline6:'6+ months',timelineExploring:'Just exploring',homeDetailsLabel:'Details (beds, baths, upgrades)',valuationSubmit:'Request a free valuation',valuationEmailSubject:'Property valuation request',propertiesEyebrow:'Properties and land',propertiesTitle:'Find your next property',propertiesDescription:'Coming soon: exclusive properties and land in Florida’s finest areas.',areasEyebrow:'Service areas',areasTitle:'Miami and South Florida',testimonialsEyebrow:'Testimonials',testimonialsTitle:'Our clients’ experiences',footerWhatsapp:'Contact via WhatsApp'
       },
       it: {
-        languageLabel:'Seleziona la lingua',navAbout:'Chi sono',navBuySell:'Compra/Vendi',navProperties:'Immobili/Terreni',navAreas:'Zone servite',navTestimonials:'Testimonianze',navContact:'Contatti',heroBadge:'Miami REALTORS® & NABOR Member • Key & Legacy Realty',heroTitle:'Trova la tua casa di lusso con',heroEmphasis:'consulenza esperta',heroDescription:'Ti accompagno nell’acquisto, nella vendita e negli investimenti immobiliari in Florida con consulenza personalizzata e conoscenza del territorio.',whatsappCta:'Prenota una consulenza',propertiesCta:'Vedi gli immobili',aboutEyebrow:'Chi sono',aboutTitle:'Impegno, integrità ed esperienza',aboutDescription:'Come agente immobiliare abilitato in Florida, offro un servizio personalizzato e una conoscenza approfondita del mercato. Rappresento ogni cliente con professionalità, trasparenza e discrezione.',philosophyTitle:'Il mio approccio',philosophyDescription:'Ogni cliente è unico. Riceverai un piano strategico su misura per i tuoi obiettivi immobiliari.',buyEyebrow:'Acquista casa',buyHeadline:'Trova la casa ideale con un piano chiaro.',buyIntro:'Comprare casa è una delle decisioni più importanti della vita. Ti accompagno dalla pre-approvazione fino alla consegna delle chiavi.',buyStep1Title:'Consulenza',buyStep1Text:'Definiamo obiettivi, budget e zone di interesse.',buyStep2Title:'Pre-approvazione',buyStep2Text:'Ti metto in contatto con finanziatori affidabili.',buyStep3Title:'Ricerca',buyStep3Text:'Accesso a immobili e opportunità di mercato.',buyStep4Title:'Offerta e negoziazione',buyStep4Text:'Strategia per ottenere il prezzo e le condizioni migliori.',buyStep5Title:'Chiusura',buyStep5Text:'Ispezione, valutazione, titolo e firma senza sorprese.',mortgageTitle:'Calcolatore mutuo',housePriceLabel:'Prezzo della casa ($)',downPaymentLabel:'Anticipo (%)',interestRateLabel:'Tasso d’interesse (%)',loanTermLabel:'Durata (anni)',taxRateLabel:'Imposte annuali ($)',insuranceLabel:'Assicurazione annuale ($)',estimatedPayment:'Rata mensile stimata',mortgageDisclaimer:'Stima informativa. Esclude HOA e assicurazione mutuo (PMI). Consulta un finanziatore.',buyerFormTitle:'Raccontami cosa cerchi',fullNameLabel:'Nome completo',emailLabel:'Email',phoneLabel:'Telefono',budgetLabel:'Budget',budget1:'< $300K',budget2:'$300K–$500K',budget3:'$500K–$750K',budget4:'$750K+',propertyTypeLabel:'Tipo di immobile',typeHouse:'Casa indipendente',typeCondo:'Condominio',typeTownhouse:'Townhouse',typeLand:'Terreno',typeOther:'Altro',citiesLabel:'Città o dettagli',sendInquiry:'Invia richiesta',buyerEmailSubject:'Nuova richiesta acquisto casa',sellEyebrow:'Vendi il tuo immobile',sellHeadline:'Vendi al miglior prezzo, in meno tempo.',sellIntro:'Un piano marketing completo per valorizzare il tuo immobile e raggiungere gli acquirenti giusti.',sellStep1Title:'Analisi di mercato gratuita',sellStep1Text:'Valutazione basata sulle vendite comparabili recenti della zona.',sellStep2Title:'Foto e video professionali',sellStep2Text:'Materiale visivo di qualità per presentare l’immobile.',sellStep3Title:'Marketing digitale bilingue',sellStep3Text:'MLS, portali principali, social media e promozione.',sellStep4Title:'Preparazione e staging',sellStep4Text:'Consigli per presentare al meglio il tuo immobile.',sellStep5Title:'Negoziazione esperta',sellStep5Text:'Esaminiamo le offerte e tuteliamo i tuoi interessi.',sellStep6Title:'Assistenza fino alla chiusura',sellStep6Text:'Coordinamento durante tutto il processo fino alla firma.',valuationTitle:'Quanto vale il tuo immobile?',valuationIntro:'Richiedi una valutazione gratuita e senza impegno con analisi comparativa personalizzata.',propertyAddressLabel:'Indirizzo dell’immobile',sellerNameLabel:'Nome',sellTimelineLabel:'Quando desideri vendere?',timeline1:'0–3 mesi',timeline2:'3–6 mesi',timeline6:'Oltre 6 mesi',timelineExploring:'Sto solo valutando',homeDetailsLabel:'Dettagli (camere, bagni, migliorie)',valuationSubmit:'Richiedi valutazione gratuita',valuationEmailSubject:'Richiesta valutazione immobile',propertiesEyebrow:'Immobili e terreni',propertiesTitle:'Trova il tuo prossimo immobile',propertiesDescription:'Prossimamente: immobili e terreni esclusivi nelle migliori zone della Florida.',areasEyebrow:'Zone servite',areasTitle:'Miami e sud della Florida',testimonialsEyebrow:'Testimonianze',testimonialsTitle:'Le esperienze dei nostri clienti',footerWhatsapp:'Contattami su WhatsApp'
+        languageLabel:'Seleziona la lingua',navAbout:'Chi sono',navBuySell:'Compra/Vendi',navProperties:'Immobili/Terreni',navAreas:'Zone servite',navTestimonials:'Testimonianze',navContact:'Contatti',heroBadge:'Miami REALTORS® & NABOR · Key & Legacy Realty',heroTitle:'La tua prossima casa in Florida inizia con',heroEmphasis:'una consulenza di fiducia.',heroDescription:'Compra, vendi o investi con una guida personale, una strategia chiara e una conoscenza locale.',whatsappCta:'Parliamo del tuo prossimo passo',propertiesCta:'Esplora gli immobili',aboutEyebrow:'Chi sono',aboutTitle:'Impegno, integrità ed esperienza',aboutDescription:'Come agente immobiliare abilitato in Florida, offro un servizio personalizzato e una conoscenza approfondita del mercato. Rappresento ogni cliente con professionalità, trasparenza e discrezione.',philosophyTitle:'Il mio approccio',philosophyDescription:'Ogni cliente è unico. Riceverai un piano strategico su misura per i tuoi obiettivi immobiliari.',buyEyebrow:'Acquista casa',buyHeadline:'Trova la casa ideale con un piano chiaro.',buyIntro:'Comprare casa è una delle decisioni più importanti della vita. Ti accompagno dalla pre-approvazione fino alla consegna delle chiavi.',buyStep1Title:'Consulenza',buyStep1Text:'Definiamo obiettivi, budget e zone di interesse.',buyStep2Title:'Pre-approvazione',buyStep2Text:'Ti metto in contatto con finanziatori affidabili.',buyStep3Title:'Ricerca',buyStep3Text:'Accesso a immobili e opportunità di mercato.',buyStep4Title:'Offerta e negoziazione',buyStep4Text:'Strategia per ottenere il prezzo e le condizioni migliori.',buyStep5Title:'Chiusura',buyStep5Text:'Ispezione, valutazione, titolo e firma senza sorprese.',mortgageTitle:'Calcolatore mutuo',housePriceLabel:'Prezzo della casa ($)',downPaymentLabel:'Anticipo (%)',interestRateLabel:'Tasso d’interesse (%)',loanTermLabel:'Durata (anni)',taxRateLabel:'Imposte annuali ($)',insuranceLabel:'Assicurazione annuale ($)',estimatedPayment:'Rata mensile stimata',mortgageDisclaimer:'Stima informativa. Esclude HOA e assicurazione mutuo (PMI). Consulta un finanziatore.',buyerFormTitle:'Raccontami cosa cerchi',fullNameLabel:'Nome completo',emailLabel:'Email',phoneLabel:'Telefono',budgetLabel:'Budget',budget1:'< $300K',budget2:'$300K–$500K',budget3:'$500K–$750K',budget4:'$750K+',propertyTypeLabel:'Tipo di immobile',typeHouse:'Casa indipendente',typeCondo:'Condominio',typeTownhouse:'Townhouse',typeLand:'Terreno',typeOther:'Altro',citiesLabel:'Città o dettagli',sendInquiry:'Invia richiesta',buyerEmailSubject:'Nuova richiesta acquisto casa',sellEyebrow:'Vendi il tuo immobile',sellHeadline:'Vendi al miglior prezzo, in meno tempo.',sellIntro:'Un piano marketing completo per valorizzare il tuo immobile e raggiungere gli acquirenti giusti.',sellStep1Title:'Analisi di mercato gratuita',sellStep1Text:'Valutazione basata sulle vendite comparabili recenti della zona.',sellStep2Title:'Foto e video professionali',sellStep2Text:'Materiale visivo di qualità per presentare l’immobile.',sellStep3Title:'Marketing digitale bilingue',sellStep3Text:'MLS, portali principali, social media e promozione.',sellStep4Title:'Preparazione e staging',sellStep4Text:'Consigli per presentare al meglio il tuo immobile.',sellStep5Title:'Negoziazione esperta',sellStep5Text:'Esaminiamo le offerte e tuteliamo i tuoi interessi.',sellStep6Title:'Assistenza fino alla chiusura',sellStep6Text:'Coordinamento durante tutto il processo fino alla firma.',valuationTitle:'Quanto vale il tuo immobile?',valuationIntro:'Richiedi una valutazione gratuita e senza impegno con analisi comparativa personalizzata.',propertyAddressLabel:'Indirizzo dell’immobile',sellerNameLabel:'Nome',sellTimelineLabel:'Quando desideri vendere?',timeline1:'0–3 mesi',timeline2:'3–6 mesi',timeline6:'Oltre 6 mesi',timelineExploring:'Sto solo valutando',homeDetailsLabel:'Dettagli (camere, bagni, migliorie)',valuationSubmit:'Richiedi valutazione gratuita',valuationEmailSubject:'Richiesta valutazione immobile',propertiesEyebrow:'Immobili e terreni',propertiesTitle:'Trova il tuo prossimo immobile',propertiesDescription:'Prossimamente: immobili e terreni esclusivi nelle migliori zone della Florida.',areasEyebrow:'Zone servite',areasTitle:'Miami e sud della Florida',testimonialsEyebrow:'Testimonianze',testimonialsTitle:'Le esperienze dei nostri clienti',footerWhatsapp:'Contattami su WhatsApp'
       }
     };
 
